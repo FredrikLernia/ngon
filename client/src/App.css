@@ -3,3 +3,66 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #555;
+  overflow-y: hidden;
+}
+
+main {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+main.modal-open {
+  overflow-y: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amatic SC', cursive;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+p {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.bg-red {
+  background-color: darkred;
+}
+
+.bg-yellow {
+  background-color: goldenrod;
+}
+
+.bg-green {
+  background-color: darkgreen;
+}
+
+.bg-purple {
+  background-color: purple;
+}
+
+.text-red {
+  color: darkred;
+}
+
+.text-yellow {
+  color: goldenrod;
+}
+
+.text-green {
+  color: darkgreen;
+}
+
+.text-purple {
+  color: purple;
+}
