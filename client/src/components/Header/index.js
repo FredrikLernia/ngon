@@ -26,7 +26,7 @@ const Header = ({ setModalOpen }) => {
             <a href="#contact">Kontakt</a>
           </li>
           <li>
-            <button onClick={() => setModalOpen(true)}><i className="fas fa-calendar-alt" /> Boka bord</button>
+            <button onClick={() => setModalOpen(true)}><i className="fas fa-calendar-alt" />Boka bord</button>
           </li>
         </ul>
       </nav>

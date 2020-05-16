@@ -8,8 +8,8 @@
 
 .page > section {
   position: relative;
-  width: 850px;
-  height: 425px;
+  width: 950px;
+  height: 475px;
 }
 
 .page .background {
@@ -19,6 +19,7 @@
   bottom: 40px;
   left: 0;
   opacity: 0.95;
+  box-shadow: -14px 14px 37px rgba(0, 0, 0, 0.6);
 }
 
 .page:nth-child(odd) .background {
@@ -26,7 +27,7 @@
   right: 0;
   bottom: 0;
   left: 40px;
-  box-shadow: -14px 14px 37px rgba(0, 0, 0, 0.6);
+  /* box-shadow: -14px 14px 37px rgba(0, 0, 0, 0.6); */
 }
 
 .page:nth-child(even) .background {
@@ -34,5 +35,5 @@
   right: 40px;
   bottom: 40px;
   left: 0;
-  box-shadow: 14px 14px 37px rgba(0, 0, 0, 0.6);
+  /* box-shadow: 14px 14px 37px rgba(0, 0, 0, 0.6); */
 }

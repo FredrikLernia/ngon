@@ -1,0 +1,57 @@
+.lunch {
+  width: 100%;
+  height: 100%;
+}
+
+.lunch >.text-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  width: 560px;
+  height: 440px;
+  background-color: rgb(255, 248, 232);
+  box-shadow: -11px 11px 34px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.lunch .lunch-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lunch .lunch-item {
+  width: 50%;
+  padding: 5px 0;
+}
+
+.lunch .lunch-item:nth-child(-n+2) {
+  margin-bottom: 10px;
+}
+
+.lunch .lunch-item:nth-child(even) {
+  padding-left: 15px;
+}
+
+.lunch p {
+  font-size: 16px;
+}
+
+.lunch .info-text {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.lunch > img {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 440px;
+  height: 440px;
+  object-fit: cover;
+  box-shadow: -14px 14px 37px rgba(0, 0, 0, 0.6);
+}
