@@ -25,7 +25,7 @@ const Lunch = ({ color }) => {
             <p>Glassnudlar soppa med grönsakbujong toppad med soya kött bita, svamp och vietnamesisk färska örter.</p>
           </div>
         </div>
-        <p className="info-text">Dagens lunch 99kr  |  Vardagar kl. 11:30-14:30  |  inkl. måltidsdryck & sallad</p>
+        <p className="info-text">Dagens lunch 99kr&nbsp;&nbsp;|&nbsp;&nbsp;Vardagar kl. 11:30-14:30&nbsp;&nbsp;|&nbsp;&nbsp;inkl. måltidsdryck & sallad</p>
       </div>
       <img src="http://ngonrestaurang.se/wp-content/uploads/2019/05/IMG_4382-1024x576.jpg" />
     </div>

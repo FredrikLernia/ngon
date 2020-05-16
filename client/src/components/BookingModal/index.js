@@ -10,10 +10,15 @@ const BookingModal = ({ open, setOpen }) => {
 
   return (
     <div className={`booking-modal${open && ' modal-open'}${transition && ' modal-transition'}`}>
-      <button className="close-btn" onClick={() => setOpen(false)}>
-        <i class="fas fa-times"></i>
-      </button>
-      <iframe src="https://module.lafourchette.com/sv_SE/module/477061-94b52" />
+      {open && (
+        <>
+          <button className="close-btn" onClick={() => setOpen(false)}>
+            <i class="fas fa-times"></i>
+          </button>
+          <iframe src="https://module.lafourchette.com/sv_SE/module/477061-94b52" />
+        </>
+      )
+      }
     </div>
   )
 }
