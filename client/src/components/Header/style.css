@@ -33,21 +33,17 @@ header ul {
 header li {
   margin-left: 10px;
   padding: 10px;
+  cursor: pointer;
+  color: #ddd;
+  transition: all 200ms ease;
+}
+
+header li:hover {
+  color: #fff;
 }
 
 header li:last-child {
   padding-right: 0;
-}
-
-header a {
-  color: #ddd;
-  text-decoration: none;
-  transition: all 200ms ease;
-}
-
-header a:hover {
-  color: #fff;
-  text-decoration: none;
 }
 
 header button {

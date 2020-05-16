@@ -1,29 +1,27 @@
 import React from 'react'
 import './style.css'
 
-const Header = ({ setModalOpen }) => {
-  /* const navigate = (e, pageId) => {
-    e.preventDefault()
-    document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' })
-    window.location.pathname = `#${pageId}`
-  } */
+const Header = ({ setModalOpen }) => {  
+  const navigate = (page) => {
+    document.querySelector(`#${page}`).scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <header>
       <nav>
         <img className="logo" src="/imgs/ngon-logo.png" alt="Ngon logo" />
         <ul>
-          <li>
-            <a href="#start">Start</a>
+          <li onClick={() => navigate('start')}>
+            Start
           </li>
-          <li>
-            <a href="#lunch">Lunch</a>
+          <li onClick={() => navigate('lunch')}>
+            Lunch
           </li>
-          <li>
-            <a href="#menu">Meny</a>
+          <li onClick={() => navigate('menu')}>
+            Meny
           </li>
-          <li>
-            <a href="#contact">Kontakt</a>
+          <li onClick={() => navigate('contact')}>
+            Kontakt
           </li>
           <li>
             <button onClick={() => setModalOpen(true)}><i className="fas fa-calendar-alt" />Boka bord</button>

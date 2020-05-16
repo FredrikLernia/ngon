@@ -7,8 +7,6 @@ import Menu from './components/Menu'
 import Contact from './components/Contact'
 import BookingModal from './components/BookingModal'
 
-/* window.addEventListener('hashchange', e => console.log(e)) */
-
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false)
 
@@ -17,8 +15,8 @@ const App = () => {
       <Header setModalOpen={setModalOpen} />
       <main className={modalOpen ? 'no-scroll' : ''}>
         <Start id="start" color="green" />
-        <Lunch id="lunch" color="purple" />
-        <Menu id="menu" color="yellow" />
+        <Lunch id="lunch" color="yellow" />
+        <Menu id="menu" color="purple" />
         <Contact id="contact" color="red" />
       </main>
       <BookingModal open={modalOpen} setOpen={setModalOpen} />
