@@ -58,14 +58,34 @@
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
+  .menu-item:nth-child(even):before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: rgb(240, 229, 203);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .menu-item:nth-child(even):hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
   
   .menu .menu-item:nth-child(-n+2) {
     margin-bottom: 10px;
   }
   
-  .menu .menu-item:nth-child(even) {
+  /* .menu .menu-item:nth-child(even) {
     padding-left: 15px;
-  }
+  } */
   
   .menu p {
     font-size: 16px;

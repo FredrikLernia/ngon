@@ -44,7 +44,6 @@ const Menu = ({color}) => {
           </div>
         </div>
         <h4 className="menu-message">Xin chúc quý khách <br/> một bữa ăn ngon miệng</h4>
-        
       </div>
       <img src="http://ngonrestaurang.se/wp-content/uploads/2019/05/IMG_4385.jpg" alt="Smarrig matbild"/>
     </div>
