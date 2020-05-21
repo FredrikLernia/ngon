@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import withPageWrapper from '../../hocs/withPageWrapper'
+import MenuModal from '../MenuModal'
 import jsonData from '../data/menu.json'
 import './style.css'
 
-const Menu = ({color}) => {
-
+const Menu = ({color, setOpen}) => {
+  // const [menuModalOpen, setMenuModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
   // const menuData = jsonData.map( (data ) => {
   //   if (data.category === 'kids') {
   //     return (
@@ -22,7 +24,7 @@ const Menu = ({color}) => {
         <h2 className={`text-${color}`}>Menyn.</h2>
         <p className="info-text">Klicka på en kategori för att se menyn</p>
         <div className="menu-items">
-          <div className="menu-item">
+          <div className="menu-item" onClick={() => setModalOpen(true)}>
             <h4>Món khai vị</h4>
             <p>Förrätter & Sidorätter</p>
           </div>
@@ -46,6 +48,7 @@ const Menu = ({color}) => {
         <h4 className="menu-message">Xin chúc quý khách <br/> một bữa ăn ngon miệng</h4>
       </div>
       <img src="http://ngonrestaurang.se/wp-content/uploads/2019/05/IMG_4385.jpg" alt="Smarrig matbild"/>
+      <MenuModal open={modalOpen} setOpen={setModalOpen} />
     </div>
   )
  
