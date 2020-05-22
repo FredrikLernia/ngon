@@ -9,11 +9,13 @@ const MenuModal = ({ open, setOpen}) => {
     setTransition(true);
   }, []);
   const menuData = jsonData.map((data) => {
-    if (data.category === 'fried') {
+    if (data.category === 'kids') {
       return (
         // fixa id till alla kategorier!
+        // om allergier eller takeaway finns i objectet skrivs dom ut
+        // kom ihåg att ta bort takeaway från 'Kids' i menu.json
         <div className="column" key={data.name}>
-          <div className="korv">
+          <div className="menu-content">
             <div className="name">
               <div>{data.name}</div>
               <div className="price"></div>

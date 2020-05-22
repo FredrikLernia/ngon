@@ -61,12 +61,8 @@
   padding: 20px;
 }
 
-/* .column:nth-child(even) {
-  border-right: 1px solid gray;
-}
-
-.colum:last-child {
-  width: 50%;
+/* .menu-content:nth-last-child(even) {
+  color: blue
 } */
 
 @media screen and (max-width: 768px) {
