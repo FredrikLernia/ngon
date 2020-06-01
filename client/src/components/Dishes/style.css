@@ -1,0 +1,13 @@
+.dishes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.dishes .col {
+  width: 50%;
+}
+
+.dishes .col img {
+  width: 100%;
+}

@@ -9,10 +9,10 @@ const Header = ({ setModalOpen }) => {
   return (
     <header>
       <nav>
-        <img className="logo" src="/imgs/ngon-logo.png" alt="Ngon logo" />
+        <img className="logo" src="/imgs/ngon-logo.png" alt="Ngon logo" onClick={() => navigate('start')} />
         <ul>
-          <li onClick={() => navigate('start')}>
-            Start
+          <li onClick={() => navigate('dishes')}>
+            Rätter
           </li>
           <li onClick={() => navigate('lunch')}>
             Lunch

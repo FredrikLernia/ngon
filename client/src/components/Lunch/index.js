@@ -2,8 +2,12 @@ import React from 'react'
 import withPageWrapper from '../../hocs/withPageWrapper'
 import './style.css'
 
-const Lunch = ({ color }) => {
+const Lunch = ({ /* color */ }) => {
   return (
+    <section className="lunch">Lunch</section>
+  )
+  
+  /* return (
     <div className="lunch">
       <div className="text-wrapper">
         <h2 className={`text-${color}`}>Lunch.</h2>
@@ -29,7 +33,7 @@ const Lunch = ({ color }) => {
       </div>
       <img src="http://ngonrestaurang.se/wp-content/uploads/2019/05/IMG_4385.jpg" />
     </div>
-  )
+  ) */
 }
 
 export default withPageWrapper(Lunch)

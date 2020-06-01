@@ -1,35 +1,5 @@
 .page {
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
-  min-height: 425px;
-}
-
-.page > section {
-  position: relative;
-  width: 950px;
-  height: 475px;
-}
-
-.page .background {
-  position: absolute;
-  opacity: 0.95;
-  box-shadow: -14px 14px 37px rgba(0, 0, 0, 0.6);
-}
-
-.page:nth-child(odd) .background {
-  top: 40px;
-  right: 0;
-  bottom: 0;
-  left: 40px;
-  /* box-shadow: -14px 14px 37px rgba(0, 0, 0, 0.6); */
-}
-
-.page:nth-child(even) .background {
-  top: 0;
-  right: 40px;
-  bottom: 40px;
-  left: 0;
-  /* box-shadow: 14px 14px 37px rgba(0, 0, 0, 0.6); */
+  /* padding-top: 80px; */
 }

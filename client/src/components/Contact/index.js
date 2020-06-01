@@ -3,7 +3,7 @@ import withPageWrapper from '../../hocs/withPageWrapper'
 
 const Contact = () => {
   return (
-    <div></div>
+    <section className="contact">Contact</section>
   )
 }
 
