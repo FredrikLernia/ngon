@@ -8,16 +8,18 @@
 }
 
 .row {
+  padding-top: 80px;
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .column {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
+  width: 50%;
+  /* flex-basis: 100%; */
+  /* flex: 1; */
 }
 
 /* 
@@ -110,8 +112,8 @@
 .menu-card {
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
   width: 100%;
-  max-width: 400px;
-  height: 150px;
+  /* max-width: 400px; */
+  height: 100px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -138,6 +140,7 @@
 }
 
 .menu-name {
+  margin-left: 10px;
   font-size: 3rem;
   line-height: 1.1;
   letter-spacing: 1px;
@@ -246,4 +249,18 @@
 }
 
 .allergy {
+}
+
+.menu ul {
+  margin-left: 20px;
+  list-style-type: none;
+}
+
+.menu .dishes {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.menu .dishes.open {
+  opacity: 1;
 }

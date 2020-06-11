@@ -1,179 +1,45 @@
 import React, { useState } from 'react';
 import withPageWrapper from '../../hocs/withPageWrapper';
-// import { HelpCircle, MessageCircle } from "react-feather"
-import Fade from 'react-reveal/Fade';
 import jsonData from '../data/menu.json';
 import './style.css';
 
-const Menu = (
-  {
-    /* color */
-  }
-) => {
-  // const qna = { ...props.data }
-  // const [friedState, setToggleFriesState] = useState(false);
-  // const [noodleState, setToggleNoodleState] = useState(false);
-  // const [riceState, setToggleRiceState] = useState(false);
-  // const [sidesState, setToggleSidesState] = useState(false);
-  const [kidsState, setToggleKidsState] = useState(false);
+const Menu = () => {
+  const [menu, setMenu] = useState('')
+  const [subMenu, setSubMenu] = useState('')
 
-  // const friedData = jsonData.map((data) => {
-  //   if (data.category === 'fried') {
-  //     return (
-  //       // fixa id till alla kategorier!
-  //       <div className="column" key={data.name}>
-  //         <div className="korv">
-  //           <div className="name">
-  //             <div>{data.name}</div>
-  //             <div className="price"></div>
-  //             <div>{data.price}</div>
-  //           </div>
-  //           {data.takeAwayPrice ? (
-  //             <p className="take-away">Take away {data.takeAwayPrice}</p>
-  //           ) : (
-  //             ''
-  //           )}
-  //           <div className="ingredients">{data.ingredients}</div>
-  //           {data.allergy ? (
-  //             <p className="take-away">*innehåller spår av: {data.allergy}</p>
-  //           ) : (
-  //             ''
-  //           )}
-  //         </div>
-  //       </div>
-  //     );
-  //   }
-  // });
+  const getMenuItems = (data, index) => (
+    <div className="korv" key={index}>
+      <div className="name">
+        <div>{data.name}</div>
+        <div className="price"></div>
+        <div>{data.price}</div>
+      </div>
+      {data.takeAwayPrice ? (
+        <p className="take-away">Take away {data.takeAwayPrice}</p>
+      ) : (
+          ''
+        )}
+      <div className="ingredients">{data.ingredients}</div>
+      {data.allergy ? (
+        <p className="take-away">*innehåller spår av: {data.allergy}</p>
+      ) : (
+          ''
+        )}
+    </div>
+  )
 
-  // const noodleData = jsonData.map((data) => {
-  //   if (data.category === 'noodles') {
-  //     return (
-  //       // fixa id till alla kategorier!
-  //       <div className="column" key={data.name}>
-  //         <div className="korv">
-  //           <div className="name">
-  //             <div>{data.name}</div>
-  //             <div className="price"></div>
-  //             <div>{data.price}</div>
-  //           </div>
-  //           {data.takeAwayPrice ? (
-  //             <p className="take-away">Take away {data.takeAwayPrice}</p>
-  //           ) : (
-  //             ''
-  //           )}
-  //           <div className="ingredients">{data.ingredients}</div>
-  //           {data.allergy ? (
-  //             <p className="take-away">*innehåller spår av: {data.allergy}</p>
-  //           ) : (
-  //             ''
-  //           )}
-  //         </div>
-  //       </div>
-  //     );
-  //   }
-  // });
-  // const riceData = jsonData.map((data) => {
-  //   if (data.category === 'rice') {
-  //     return (
-  //       // fixa id till alla kategorier!
-  //       <div className="column" key={data.name}>
-  //         <div className="korv">
-  //           <div className="name">
-  //             <div>{data.name}</div>
-  //             <div className="price"></div>
-  //             <div>{data.price}</div>
-  //           </div>
-  //           {data.takeAwayPrice ? (
-  //             <p className="take-away">Take away {data.takeAwayPrice}</p>
-  //           ) : (
-  //             ''
-  //           )}
-  //           <div className="ingredients">{data.ingredients}</div>
-  //           {data.allergy ? (
-  //             <p className="take-away">*innehåller spår av: {data.allergy}</p>
-  //           ) : (
-  //             ''
-  //           )}
-  //         </div>
-  //       </div>
-  //     );
-  //   }
-  // });
-  const kidsData = jsonData.map((data) => {
-    if (data.category === 'kids') {
-      return (
-        // fixa id till alla kategorier!
-        // <div className="column" >
-        <div className="korv" key={data.name}>
-          <div className="name">
-            <div>{data.name}</div>
-            <div className="price"></div>
-            <div>{data.price}</div>
-          </div>
-          {data.takeAwayPrice ? (
-            <p className="take-away">Take away {data.takeAwayPrice}</p>
-          ) : (
-            ''
-          )}
-          <div className="ingredients">{data.ingredients}</div>
-          {data.allergy ? (
-            <p className="take-away">*innehåller spår av: {data.allergy}</p>
-          ) : (
-            ''
-          )}
-        </div>
-        // </div>
-      );
+  const onMenuItemClick = category => {
+    if (category === menu) {
+      setMenu('')
+      setSubMenu('')
+      return
     }
-  });
-  // const sidesData = jsonData.map((data) => {
-  //   if (data.category === 'sides') {
-  //     return (
-  //       // fixa id till alla kategorier!
-  //       <div className="column">
-  //         <div className="korv" key={data.name}>
-  //           <div className="name">
-  //             <div>{data.name}</div>
-  //             <div className="price"></div>
-  //             <div>{data.price}</div>
-  //           </div>
-  //           {data.takeAwayPrice ? (
-  //             <p className="take-away">Take away {data.takeAwayPrice}</p>
-  //           ) : (
-  //             ''
-  //           )}
-  //           <div className="ingredients">{data.ingredients}</div>
-  //           {data.allergy ? (
-  //             <p className="take-away">*innehåller spår av: {data.allergy}</p>
-  //           ) : (
-  //             ''
-  //           )}
-  //         </div>
-  //       </div>
-  //     );
-  //   }
-  // });
 
-  // const openFries = () => {
-  //   setToggleFriesState(!friedState);
-  //   if (friedState) return friedData;
-  // };
-  // const openNoodles = () => {
-  //   setToggleNoodleState(!noodleState);
-  //   if (noodleState) return noodleData;
-  // };
-  // const openRice = () => {
-  //   setToggleRiceState(!riceState);
-  //   if (riceState) return riceData;
-  // };
-  // const openSides = () => {
-  //   setToggleSidesState(!sidesState);
-  //   if (sidesState) return sidesData;
-  // };
-  const openKids = () => {
-    setToggleKidsState(!kidsState);
-    if (kidsState) return kidsData;
-  };
+    setMenu(category)
+    setTimeout(() => setSubMenu(category), 100)
+  }
+
+  console.log(jsonData)
 
   return (
     <section className="menu">
@@ -183,108 +49,81 @@ const Menu = (
         </div>
       </div>
       <div className="row">
-        <div onClick={openKids} className="menu-card">
-          <div>
-            <div className="menu-img">
-              <img class="image" src="https://i.pravatar.cc/110" alt="" />
-              {/* <div className="img-shadow"></div> */}
+        <div className="column">
+          <ul>
+            <div className="card-wrapper">
+              <li className="menu-card" onClick={() => onMenuItemClick('kids')}>
+                <img class="image" src="https://i.pravatar.cc/110" alt="" />
+                <h2 className="menu-name">Barnrätter</h2>
+              </li>
+              {menu === 'kids' && (
+                <div className="relative">
+                  <div className={subMenu === 'kids' ? 'dishes open' : 'dishes'}>
+                    {jsonData.filter(({ category }) => category === 'kids').map((dishes, i) => getMenuItems(dishes, i))}
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="menu-section">
-              <h2 className="menu-name">Barnrätter</h2>
+            <div className="card-wrapper">
+              <li className="menu-card" onClick={() => onMenuItemClick('noodles')}>
+                <img class="image" src="https://i.pravatar.cc/110" alt="" />
+                <h2 className="menu-name">Nudelrätter</h2>
+              </li>
+              {menu === 'noodles' && (
+                <div className="relative">
+                  <div className={subMenu === 'noodles' ? 'dishes open' : 'dishes'}>
+                    {jsonData.filter(({ category }) => category === 'noodles').map((dishes, i) => getMenuItems(dishes, i))}
+                  </div>
+                </div>
+              )}
             </div>
-          <Fade top opposite collapse duration={300} when={kidsState}>
-            <div className="answer-content">{kidsData}</div>
-          </Fade>
-          </div>
+            <div className="card-wrapper">
+              <li className="menu-card" onClick={() => onMenuItemClick('rice')}>
+                <img class="image" src="https://i.pravatar.cc/110" alt="" />
+                <h2 className="menu-name">Risrätter</h2>
+              </li>
+              {menu === 'rice' && (
+                <div className="relative">
+                  <div className={subMenu === 'rice' ? 'dishes open' : 'dishes'}>
+                    {jsonData.filter(({ category }) => category === 'rice').map((dishes, i) => getMenuItems(dishes, i))}
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="card-wrapper">
+              <li className="menu-card" onClick={() => onMenuItemClick('fried')}>
+                <img class="image" src="https://i.pravatar.cc/110" alt="" />
+                <h2 className="menu-name">Friterat</h2>
+              </li>
+              {menu === 'fried' && (
+                <div className="relative">
+                  <div className={subMenu === 'fried' ? 'dishes open' : 'dishes'}>
+                    {jsonData.filter(({ category }) => category === 'fried').map((dishes, i) => getMenuItems(dishes, i))}
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="card-wrapper">
+              <li className="menu-card" onClick={() => onMenuItemClick('sides')}>
+                <img class="image" src="https://i.pravatar.cc/110" alt="" />
+                <h2 className="menu-name">Förrätter</h2>
+              </li>
+              {menu === 'sides' && (
+                <div className="relative">
+                  <div className={subMenu === 'sides' ? 'dishes open' : 'dishes'}>
+                    {jsonData.filter(({ category }) => category === 'sides').map((dishes, i) => getMenuItems(dishes, i))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </ul>
         </div>
-        <img src="./imgs/menu-img.png" alt="something" />
+        <div className="column">
+          <img src="./imgs/menu-img.png" alt="something" />
+        </div>
       </div>
-      {/* <div className="row">
-            <div className="column">
-              <div className="menu-column">
-
-              
-              <div className="menu-items mb-4">
-                <div
-                  type="text"
-                  className="menu-item"
-                  onClick={openKids}
-                >
-                  <div className="menu-img" />
-                  <p className="text-style">Barnrätter</p>
-                </div>
-                <Fade right opposite collapse duration={300} when={kidsState}>
-                  <div className="answer-content">
-                    {kidsData}
-                  </div>
-                </Fade>
-                <div
-                  type="text"
-                  className="menu-item"
-                  onClick={openNoodles}
-                >
-                  <div className="menu-img" />
-                  <p className="text-style"> Nudelrätter</p>
-                </div>
-                <Fade right opposite collapse duration={300} when={noodleState}>
-                  <div className="answer-content">
-                    {noodleData}
-                  </div>
-                </Fade>
-                <div
-                  type="text"
-                  className="menu-item"
-                  onClick={openRice}
-                >
-                  <div className="menu-img" />
-                  <p className="text-style">Risrätter</p>
-                </div>
-                <Fade right opposite collapse duration={300} when={riceState}>
-                  <div className="answer-content">
-                    {riceData}
-                  </div>
-                </Fade>
-                <div
-                  type="text"
-                  className="menu-item"
-                  onClick={openFries}
-                >
-                  <div className="menu-img" />
-                  <p className="text-style">Friterade rätter</p>
-                </div>
-                <Fade right opposite collapse duration={300} when={friedState}>
-                  <div className="answer-content">
-                    {friedData}
-                  </div>
-                </Fade>
-                <div
-                  type="text"
-                  className="menu-item"
-                  onClick={openSides}
-                >
-                  <div className="menu-img" />
-                  <p className="text-style">Sidorätter / förrätter</p>
-                </div>
-                <Fade right opposite collapse duration={300} when={sidesState}>
-                  <div className="answer-content">
-                    {sidesData}
-                  </div>
-                </Fade>
-              </div>
-              </div>
-   
-            </div>
-            <div className="column">
-                <div className="img-column">
-              <img src="http://ngonrestaurang.se/wp-content/uploads/2019/05/IMG_4382.jpg" alt="something"/>
-
-                </div>
-              </div>
-          </div> */}
-      {/* </div>
-      </div> */}
     </section>
-  );
+  )
 };
 
 export default withPageWrapper(Menu);
