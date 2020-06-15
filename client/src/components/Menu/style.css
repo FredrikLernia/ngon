@@ -1,118 +1,45 @@
 .menu {
   width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  padding-top: 80px;
 }
 
 .row {
-  padding-top: 80px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  /* justify-content: center; */
-}
-.column {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  /* flex-basis: 100%; */
-  /* flex: 1; */
-}
-
-/* 
-.column .korv {
-    width: 100%;
-    margin-top: 10px;
-}
-
-.column .question-content {
-    width: 100%;
-}
-.column img {
-    width: 100%;
-}
-
-.row.column .header {
-  width: 100%;
-  background: green;
-  text-align: center;
-} */
-.menu .menu-items {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
+  flex-direction: row;
+  margin-right: -15px;
+  margin-left: -15px;
 }
-
-.menu .menu-item {
-  width: 100%;
-  padding: 5px 0;
-}
-
-.menu-item {
+.column {
   position: relative;
-  text-decoration: none;
-  border: 1px solid black;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-.menu-item:hover {
-  color: #000;
-  cursor: pointer;
+.header {
+  color: #ff6289;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 3rem;
+  margin: 0px 0 20px 0px;
 }
 
-.menu-item:before {
-  content: '';
+.img-container {
   position: absolute;
-  width: 70%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background: rgb(240, 229, 203);
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  z-index: -1;
+  left: 45%;
+  top: 0;
 }
 
-.menu-item:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+.card-wrapper {
+  width: 50%;
+  margin: 0 auto;
 }
-
-/* .menu .menu-item:nth-child(-n+2) {
-    margin-bottom: 10px;
-  }
-   */
-/* .menu .menu-item:nth-child(even) {
-    padding-left: 15px;
-  } */
-
-.menu p {
-  font-size: 25px;
-}
-
-.menu .info-text {
-  margin-top: 10px;
-  font-style: italic;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-/* .answer-content {
-  padding: 10px;
-  overflow: hidden;
-  color: #333;
-  z-index: 1;
-  font-size: 15px;
-} */
 
 .menu-card {
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
   width: 100%;
-  /* max-width: 400px; */
   height: 100px;
   display: flex;
   align-items: center;
@@ -120,23 +47,18 @@
   text-align: center;
   padding: 0.6em;
   cursor: pointer;
+  z-index: 9999;;
 }
-.menu-card:hover {
-    background-color: #f2f2f2;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.menu-card:hover{
+  background-color: #f2f2f2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
 }
 
 .image {
   border-radius: 50%;
   border: 2px solid grey;
-}
-
-.menu-section {
-  text-align: left;
-  margin-left: 3em;
-
-  margin-top: 25%;
-  margin-bottom: 25%;
+  display: flex;
 }
 
 .menu-name {
@@ -146,90 +68,14 @@
   letter-spacing: 1px;
 }
 
-.img-shadow {
-  /* border-bottom: 1px solid black; */
-  width: 110px;
-  display: flex;
-  margin: 0;
-  margin: 0 auto;
-  padding: 0;
-  border: 3px solid red;
-  justify-content: center;
-}
-
-/* .menu > img {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    width: 440px;
-    height: 440px;
-    object-fit: cover;
-    box-shadow: -14px 14px 37px rgba(0, 0, 0, 0.6);
-  } */
-
-/* .menu-message {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 26px;
-  } */
-/* .question-content .qna-icon {
-  float: left;
-}
-.question-content .text-style {
-  padding-left: 32px;
-}
-.question-content {
-  background-color: lightgreen;
-  color: black;
-  cursor: pointer;
-  padding: 10px;
-  width: 50%;
-  border-bottom: 1px solid lightgray;
-  outline: none;
-  font-size: 15px;
-  box-shadow: 0 0 3px 0 black;
-  z-index: 2;
-  svg {
-      color: var(--primary);
-    } 
-}
-.answer-content {
-    padding: 10px;
-    overflow: hidden;
-    color: #333;
-    box-shadow: 0 1px 3px 0 var(--transactionBackgroundShadow);
-    z-index: 1;
-    background-color: var(--secondary);
-    font-size: 15px;
-  }  */
-
-@media screen and (max-width: 768px) {
-  .column {
-    display: flex;
-    flex-direction: column;
-  }
-  .column .question-content {
-    width: 100%;
-  }
-  .korv {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-.header {
-  color: #ff6289;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-size: 3rem;
-  padding-top: 50px;
-  margin: 20px 0 20px 0px;
+.list {
+  margin-bottom: 10px;
 }
 
 .name {
   display: flex;
   align-items: baseline;
+  margin-bottom: 5px;
 }
 
 .price {
@@ -239,28 +85,39 @@
 }
 
 .take-away {
+  font-size: 17px;
   text-align: right;
   color: darkorange;
 }
 
 .ingredients {
   color: #bbb;
-  margin-bottom: 1em;
+  margin-bottom: 0;
 }
 
 .allergy {
+  font-size: 14px;
+  text-align: left;
+  color: darkorange;
 }
 
-.menu ul {
-  margin-left: 20px;
+.relative {
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+ul {
   list-style-type: none;
 }
 
-.menu .dishes {
+.dishes {
+  margin-top: 20px;
   opacity: 0;
   transition: opacity 500ms ease;
+  flex-direction: column;
 }
 
-.menu .dishes.open {
+.dishes.open {
   opacity: 1;
 }
