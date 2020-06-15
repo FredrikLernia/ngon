@@ -39,8 +39,15 @@ const Menu = () => {
     setTimeout(() => setSubMenu(category), 100);
   };
 
+  const scrollIntoMenu = () => {
+    setMenu('')
+    const element = document.getElementById('menu');
+    element.scrollIntoView({ behavior: 'smooth' });
+    setSubMenu('');
+  };
+
   return (
-    <section className="menu">
+    <section id="menu" className="menu">
       <div className="row">
         <div className="column">
           <div className="header">
@@ -51,8 +58,7 @@ const Menu = () => {
       <div className="row">
         <div className="column">
           <div className="img-container">
-
-        <img src="./imgs/menu-img.png" alt="something" />
+            <img src="./imgs/menu-img.png" alt="something" />
           </div>
 
           <ul>
@@ -69,6 +75,15 @@ const Menu = () => {
                     {jsonData
                       .filter(({ category }) => category === 'kids')
                       .map((dishes, i) => getMenuItems(dishes, i))}
+                  </div>
+                  <div className="scroll-div">
+                    <button
+                      className="scroll-back"
+                      type="button"
+                      onClick={() => scrollIntoMenu()}
+                    >
+                      <i className="fa fa-chevron-up" aria-hidden="true"></i>
+                    </button>
                   </div>
                 </div>
               )}
@@ -90,6 +105,15 @@ const Menu = () => {
                       .filter(({ category }) => category === 'noodles')
                       .map((dishes, i) => getMenuItems(dishes, i))}
                   </div>
+                  <div className="scroll-div">
+                    <button
+                      className="scroll-back"
+                      type="button"
+                      onClick={() => scrollIntoMenu()}
+                    >
+                      <i className="fa fa-chevron-up" aria-hidden="true"></i>
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
@@ -106,6 +130,15 @@ const Menu = () => {
                     {jsonData
                       .filter(({ category }) => category === 'rice')
                       .map((dishes, i) => getMenuItems(dishes, i))}
+                  </div>
+                  <div className="scroll-div">
+                    <button
+                      className="scroll-back"
+                      type="button"
+                      onClick={() => scrollIntoMenu()}
+                    >
+                      <i className="fa fa-chevron-up" aria-hidden="true"></i>
+                    </button>
                   </div>
                 </div>
               )}
@@ -127,6 +160,15 @@ const Menu = () => {
                       .filter(({ category }) => category === 'fried')
                       .map((dishes, i) => getMenuItems(dishes, i))}
                   </div>
+                  <div className="scroll-div">
+                    <button
+                      className="scroll-back"
+                      type="button"
+                      onClick={() => scrollIntoMenu()}
+                    >
+                      <i className="fa fa-chevron-up" aria-hidden="true"></i>
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
@@ -146,6 +188,15 @@ const Menu = () => {
                     {jsonData
                       .filter(({ category }) => category === 'sides')
                       .map((dishes, i) => getMenuItems(dishes, i))}
+                  </div>
+                  <div className="scroll-div">
+                    <button
+                      className="scroll-back"
+                      type="button"
+                      onClick={() => scrollIntoMenu()}
+                    >
+                      <i className="fa fa-chevron-up" aria-hidden="true"></i>
+                    </button>
                   </div>
                 </div>
               )}
