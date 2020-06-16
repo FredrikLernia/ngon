@@ -164,8 +164,17 @@ ul {
   }
  }
  @media (max-width: 576px) { 
+   .menu-card {
+     height: 75px;
+   }
   .card-wrapper {
     width: 90%;
+  }
+  .image {
+    border-radius: 50%;
+    border: 2px solid grey;
+    display: flex;
+    width: 25%;
   }
   .img-container {
     top: 25%;

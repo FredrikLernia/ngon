@@ -58,7 +58,7 @@ const Menu = () => {
       <div className="row">
         <div className="column">
           <div className="img-container">
-            <img src="./imgs/menu-img.png" alt="something" />
+            <img className="menu-img" src="./imgs/menu-img.png" alt="something" />
           </div>
 
           <ul>
