@@ -86,20 +86,27 @@
 }
 
 .take-away {
-  font-size: 17px;
+  font-size: 16px;
+  flex-direction: column;
+  display: inline-flex;
   text-align: right;
   color: darkorange;
+  float: right;
 }
 
 .ingredients {
   color: #bbb;
+  display: inline-flex;
+  flex-direction: column;
   margin-bottom: 0;
+  float: left;
   text-align: left;
 }
 
 .allergy {
   font-size: 14px;
   text-align: left;
+  float: left;
   color: darkorange;
 }
 
