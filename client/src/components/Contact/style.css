@@ -69,6 +69,13 @@
     display: flex;
   }
 
+  .map-style {
+    width: 100%;
+    height: 360px;
+    /* border: 15px solid white; */
+    margin-top: auto;
+  }
+
   @media (max-width: 992px) { 
       .contact-info {
         width: 100%;
@@ -83,7 +90,9 @@
    }
 
   @media (max-width: 768px) { 
-
+    .map-style {
+        height: 220px;
+      }
    }
    @media (max-width: 576px) { 
     .opening-hours {
@@ -102,5 +111,9 @@
       .info-item {
         font-size: 15px;
         color: #f2f2f2;
+      }
+
+      .map-style {
+        height: 280px;
       }
   }
