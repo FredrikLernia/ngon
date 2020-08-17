@@ -121,12 +121,11 @@ ul {
   list-style-type: none;
 }
 
-.dishes {
+/* .dishes {
   margin-top: 20px;
-  /* opacity: 0; */
   transition: opacity 500ms ease;
   flex-direction: column;
-}
+} */
 
 .scroll-div {
   text-align: center;

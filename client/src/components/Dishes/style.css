@@ -1,113 +1,20 @@
 .dishes {
   width: 100%;
-  padding: 120px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.dishes .chosen-dish {
-  display: flex;
-  padding: 0 80px;
-
-  /* opacity: 1; */
-  /* transition: opacity 300ms linear; */
-}
-
-.dishes .chosen-dish h2 {
-  margin-bottom: 15px;
-}
-
-.dishes .chosen-dish div.img {
-  margin-left: 60px;
-
-  opacity: 1;
-  transition: opacity 400ms linear;
-}
-
-.dishes .text-content {
-  height: 300px;
-  overflow-y: hidden;
-  transition: height 400ms ease;
-}
-
-.dishes .chosen-dish img {
-  width: 400px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.dishes .cards-wrapper {
-  display: flex;
-  padding: 40px 80px 0;
-}
-
-.dishes .card {
-  width: 33.33%;
-  padding: 15px;
-  display: flex;
-  /* align-items: center; */
-  border-radius: 10px;
-  cursor: pointer;
-  /* transition: all 150ms linear; */
-
-  /* opacity: 1;
-  transition: opacity 200ms linear, height 200ms linear; */
-}
-
-.dishes .card:hover {
-  background-color: #eee;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.dishes .card img {
-  width: 80px;
-  height: 80px;
-  margin-right: 30px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.dishes p {
-  margin-bottom: 12px;
-}
-
-.dishes .animation-wrapper {
-  display: flex;
-  opacity: 1;
-}
-
-/* .dishes .card > .animation-wrapper {
-  align-items: center;
-} */
-
-.dishes .content {
   display: flex;
   align-items: center;
-
-  opacity: 1;
-  transition: opacity 400ms ease;
+  justify-content: center;
 }
 
-.dishes .animation-wrapper.on .img {
-  opacity: 0 !important;
-  /* height: 0 !important; */
-  /* transition: opacity 1250ms ease; */
+.dishes .carousel {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid black;
+  display: flex;
+  overflow-x: hidden;
 }
 
-.dishes .animation-wrapper.on > .text-content {
-  height: 0 !important;
-  /* height: 0 !important; */
-  /* transition: opacity 1250ms ease; */
+.dishes > .carousel > .dish {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
 }
-
-.dishes .animation-wrapper.on > .content {
-  opacity: 0 !important;
-  /* height: 0 !important; */
-  /* transition: opacity 1250ms ease; */
-}
-
-/* .animation > .text-content {
-  height: 0 !important
-} */

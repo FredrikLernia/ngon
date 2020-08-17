@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Start from './components/Start'
@@ -10,6 +10,11 @@ import Dishes from './components/Dishes'
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false)
+
+  // wip
+  useEffect(() => {
+    document.querySelector(`#dishes`).scrollIntoView()
+  }, [])
 
   return (
     <div className="App">
