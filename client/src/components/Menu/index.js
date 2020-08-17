@@ -41,13 +41,13 @@ const Menu = () => {
 
   const scrollIntoMenu = () => {
     setMenu('')
-    const element = document.getElementById('menu');
+    const element = document.getElementById('menus');
     element.scrollIntoView({ behavior: 'smooth' });
     setSubMenu('');
   };
 
   return (
-    <section id="menu" className="menu">
+    <section id="menus" className="menus">
       <div className="row">
         <div className="column">
           <div className="header">
@@ -70,7 +70,7 @@ const Menu = () => {
               {menu === 'kids' && (
                 <div className="relative">
                   <div
-                    className={subMenu === 'kids' ? 'dishes open' : 'dishes'}
+                    className={subMenu === 'kids' ? 'menu-dishes open' : 'menu-dishes'}
                   >
                     {jsonData
                       .filter(({ category }) => category === 'kids')
@@ -99,7 +99,7 @@ const Menu = () => {
               {menu === 'noodles' && (
                 <div className="relative">
                   <div
-                    className={subMenu === 'noodles' ? 'dishes open' : 'dishes'}
+                    className={subMenu === 'noodles' ? 'menu-dishes open' : 'menu-dishes'}
                   >
                     {jsonData
                       .filter(({ category }) => category === 'noodles')
@@ -125,7 +125,7 @@ const Menu = () => {
               {menu === 'rice' && (
                 <div className="relative">
                   <div
-                    className={subMenu === 'rice' ? 'dishes open' : 'dishes'}
+                    className={subMenu === 'rice' ? 'menu-dishes open' : 'menu-dishes'}
                   >
                     {jsonData
                       .filter(({ category }) => category === 'rice')
@@ -154,7 +154,7 @@ const Menu = () => {
               {menu === 'fried' && (
                 <div className="relative">
                   <div
-                    className={subMenu === 'fried' ? 'dishes open' : 'dishes'}
+                    className={subMenu === 'fried' ? 'menu-dishes open' : 'menu-dishes'}
                   >
                     {jsonData
                       .filter(({ category }) => category === 'fried')
@@ -183,7 +183,7 @@ const Menu = () => {
               {menu === 'sides' && (
                 <div className="relative">
                   <div
-                    className={subMenu === 'sides' ? 'dishes open' : 'dishes'}
+                    className={subMenu === 'sides' ? 'menu-dishes open' : 'menu-dishes'}
                   >
                     {jsonData
                       .filter(({ category }) => category === 'sides')
