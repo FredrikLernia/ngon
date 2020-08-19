@@ -147,12 +147,7 @@ ul {
   margin-top: 20px;
   transition: opacity 500ms ease;
   flex-direction: column;
-<<<<<<< HEAD
-} */
-=======
-  display: flex;
 }
->>>>>>> 23c88695fe7aebecaff8e377d4d6f435804c23a3
 
 .scroll-div {
   text-align: center;

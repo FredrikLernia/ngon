@@ -1,20 +1,97 @@
 .dishes {
   width: 100%;
+  padding-top: 80px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #464440;
 }
 
 .dishes .carousel {
-  width: 1000px;
-  height: 500px;
-  border: 1px solid black;
-  display: flex;
+  position: relative;
+  width: 1050px;
+  height: 400px;
   overflow-x: hidden;
 }
 
-.dishes > .carousel > .dish {
+.dishes .carousel:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  background-image: linear-gradient(to right, #464440, rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+.dishes .carousel:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #464440);
+  z-index: 1;
+}
+
+.dishes .carousel-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 1000ms ease;
+}
+
+.dishes .dish {
+  padding: 0 50px;
   width: 100%;
   height: 100%;
   flex-shrink: 0;
+  display: flex;
+}
+
+.dishes .left {
+  width: 50%;
+}
+
+.dishes .right {
+  flex: 1;
+  padding-left: 30px;
+}
+
+.dishes .right h2 {
+  font-size: 50px;
+  margin-top: -12px;
+  color: #ff6289;
+}
+
+.dishes .right p {
+  color: #f2f2f2;
+}
+
+.dishes .left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dishes .carousel-buttons {
+  margin-top: 30px;
+  display: flex;
+}
+
+.dishes .carousel-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: background-color 1000ms ease;
+  cursor: pointer;
+}
+
+.dishes .carousel-btn:not(:last-child) {
+  margin-right: 15px;
 }
