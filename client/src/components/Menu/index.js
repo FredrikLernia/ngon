@@ -19,7 +19,7 @@ const Menu = () => {
       ) : (
         ''
       )}
-      <div className="ingredients">{data.ingredients}</div>
+      <p className="ingredients">{data.ingredients}</p>
       {data.allergy ? (
         <p className="allergy">*innehåller spår av: {data.allergy}</p>
       ) : (
@@ -36,7 +36,7 @@ const Menu = () => {
     }
 
     setMenu(category);
-    setTimeout(() => setSubMenu(category), 100);
+    setTimeout(() => setSubMenu(category), 500);
   };
 
   const scrollIntoMenu = () => {
@@ -57,9 +57,9 @@ const Menu = () => {
       </div>
       <div className="row">
         <div className="column">
-          <div className="img-container">
+          {/* <div className="img-container">
             <img className="menu-img" src="./imgs/menu-img.png" alt="something" />
-          </div>
+          </div> */}
 
           <ul>
             <div className="card-wrapper">
