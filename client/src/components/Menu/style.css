@@ -147,6 +147,7 @@ ul {
   margin-top: 20px;
   transition: opacity 500ms ease;
   flex-direction: column;
+  display: flex;
 }
 
 .scroll-div {
