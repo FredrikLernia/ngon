@@ -1,39 +1,38 @@
 import React from 'react'
 import withPageWrapper from '../../hocs/withPageWrapper'
 import './style.css'
+import data from './data.json'
 
-const Lunch = ({ /* color */ }) => {
+const Lunch = () => {
   return (
-    <section className="lunch">Lunch</section>
-  )
-  
-  /* return (
-    <div className="lunch">
-      <div className="text-wrapper">
-        <h2 className={`text-${color}`}>Lunch.</h2>
-        <div className="lunch-items">
-          <div className="lunch-item">
-            <h4>1. Bún bò Nam Bộ</h4>
-            <p>Stekt ryggbiff med citrongräss, vit lök, serveras med risnudlar, koriander, mynta, sallad och egen fisksås dressing.</p>
+    <section className="lunch">
+      <h1>Lunch</h1>
+      <p className="info">
+        Dagens lunch 99kr. Vardagar kl. 11:30-14:30
+        <br />
+        inkl. måltidsdrycka & sallad, läsk + 10kr
+      </p>
+      <div className="container">
+        {data.map(({ heading, desc }, i) => (
+          <div key={i} className="lunch-item">
+            <h4>{heading}</h4>
+            <p>{desc}</p>
           </div>
-          <div className="lunch-item">
-            <h4>2. Hải sản xào cay</h4>
-            <p>Wokad tigerräkor, bläskfisk, musslor med chili och blandade grönsaker, serveras med ris och sallad.</p>
-          </div>
-          <div className="lunch-item">
-            <h4>3. Gà chiên xù</h4>
-            <p>Pankopanerad & friterad kycklingfilé med sesamfrö. Serveras med ris, kålsallad och hemlagad sweetchili sås.</p>
-          </div>
-          <div className="lunch-item">
-            <h4>4. Miến chay</h4>
-            <p>Glassnudlar soppa med grönsakbujong toppad med soya kött bita, svamp och vietnamesisk färska örter.</p>
-          </div>
-        </div>
-        <p className="info-text">Dagens lunch 99kr&nbsp;&nbsp;|&nbsp;&nbsp;Vardagar kl. 11:30-14:30&nbsp;&nbsp;|&nbsp;&nbsp;inkl. måltidsdryck & sallad</p>
+        ))}
       </div>
-      <img src="http://ngonrestaurang.se/wp-content/uploads/2019/05/IMG_4385.jpg" />
-    </div>
-  ) */
+      {/* <div className="imgs-container">
+        <div className="img-wrapper">
+          <img src="/imgs/lunch/1.jpg" alt="Ngon lunch image" />
+        </div>
+        <div className="img-wrapper">
+          <img src="/imgs/lunch/2.jpg" alt="Ngon lunch image" />
+        </div>
+        <div className="img-wrapper">
+          <img src="/imgs/lunch/3.jpg" alt="Ngon lunch image" />
+        </div>
+      </div> */}
+    </section>
+  )
 }
 
 export default withPageWrapper(Lunch)

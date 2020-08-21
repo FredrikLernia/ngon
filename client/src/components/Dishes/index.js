@@ -27,10 +27,10 @@ const Dishes = () => {
         <div className="carousel-inner" style={{ transform: `translateX(${displayIdx * -100}%)` }}>
           {dishes.map(({ heading, text, img }, i) => (
             <div key={i} className="dish">
-              <div className="left">
+              <div className="img-wrapper">
                 <img src={img} alt={heading} />
               </div>
-              <div className="right">
+              <div className="text-wrapper">
                 <h2>{heading}</h2>
                 <p>{text}</p>
               </div>
