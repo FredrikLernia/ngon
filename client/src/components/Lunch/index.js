@@ -15,7 +15,7 @@ const Lunch = () => {
       <div className="container">
         {data.map(({ heading, desc }, i) => (
           <div key={i} className="lunch-item">
-            <h4>{heading}</h4>
+            <h4>{i + 1}. {heading}</h4>
             <p>{desc}</p>
           </div>
         ))}
