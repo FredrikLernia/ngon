@@ -1,6 +1,7 @@
 .lunch {
   width: 100%;
   padding: 120px 10px 0;
+  background-color: #fff5f5;
 }
 
 .lunch h1 {
@@ -68,6 +69,7 @@
   }
   
   .lunch .container {
+    margin-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -88,12 +90,12 @@
   
   .lunch .imgs-container {
     display: flex;
-    width: 950px;
+    width: 992px;
     height: 250px;
   }
   
   .lunch .img-wrapper:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 5px;
   }
   
   .lunch img {

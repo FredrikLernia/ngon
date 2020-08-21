@@ -20,7 +20,7 @@ const Lunch = () => {
           </div>
         ))}
       </div>
-      {/* <div className="imgs-container">
+      <div className="imgs-container">
         <div className="img-wrapper">
           <img src="/imgs/lunch/1.jpg" alt="Ngon lunch image" />
         </div>
@@ -30,7 +30,7 @@ const Lunch = () => {
         <div className="img-wrapper">
           <img src="/imgs/lunch/3.jpg" alt="Ngon lunch image" />
         </div>
-      </div> */}
+      </div>
     </section>
   )
 }
