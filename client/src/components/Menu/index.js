@@ -64,7 +64,7 @@ const Menu = () => {
           <ul>
             <div className="card-wrapper">
               <li className="menu-card" onClick={() => onMenuItemClick('kids')}>
-                <img className="image" src="https://i.pravatar.cc/90" alt="" />
+                <img className="image" src="./imgs/menu/kids.jpg" alt="" />
                 <h2 className="menu-name">Barnrätter</h2>
               </li>
               {menu === 'kids' && (
@@ -93,7 +93,7 @@ const Menu = () => {
                 className="menu-card"
                 onClick={() => onMenuItemClick('noodles')}
               >
-                <img className="image" src="https://i.pravatar.cc/90" alt="" />
+                <img className="image" src="./imgs/menu/noodle.jpg" alt="" />
                 <h2 className="menu-name">Nudelrätter</h2>
               </li>
               {menu === 'noodles' && (
@@ -119,7 +119,7 @@ const Menu = () => {
             </div>
             <div className="card-wrapper">
               <li className="menu-card" onClick={() => onMenuItemClick('rice')}>
-                <img className="image" src="https://i.pravatar.cc/90" alt="" />
+                <img className="image" src="./imgs/menu/rice.jpg" alt="" />
                 <h2 className="menu-name">Risrätter</h2>
               </li>
               {menu === 'rice' && (
@@ -148,7 +148,7 @@ const Menu = () => {
                 className="menu-card"
                 onClick={() => onMenuItemClick('fried')}
               >
-                <img className="image" src="https://i.pravatar.cc/90" alt="" />
+                <img className="image" src="./imgs/menu/fried.jpg" alt="" />
                 <h2 className="menu-name">Friterat</h2>
               </li>
               {menu === 'fried' && (
@@ -177,7 +177,7 @@ const Menu = () => {
                 className="menu-card"
                 onClick={() => onMenuItemClick('sides')}
               >
-                <img className="image" src="https://i.pravatar.cc/90" alt="" />
+                <img className="image" src="./imgs/menu/sides.jpg" alt="" />
                 <h2 className="menu-name">Förrätter</h2>
               </li>
               {menu === 'sides' && (
