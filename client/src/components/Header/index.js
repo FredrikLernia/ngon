@@ -1,8 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './style.css'
 
 const Header = ({ setModalOpen }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [displayLogo, setDisplayLogo] = useState(false)
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 468) {
+      setDisplayLogo(true)
+    }
+    else {
+      setDisplayLogo(false)
+    }
+  })
 
   const navigate = (page, isMobile = false) => {
     const el = document.querySelector(`#${page}`)
@@ -11,7 +21,6 @@ const Header = ({ setModalOpen }) => {
     if (isMobile) {
       setTimeout(() => {
         setMobileMenuOpen(false)
-        // document.querySelector(`#${page}`).scrollIntoView({ behavior: 'smooth' })
         window.scrollTo({ top: offsetTop, behavior: 'smooth' })
       }, 200)
 
@@ -19,16 +28,12 @@ const Header = ({ setModalOpen }) => {
     }
 
     window.scrollTo({ top: offsetTop, behavior: 'smooth' })
-
-    // document.querySelector(`#${page}`).scrollIntoView({ behavior: 'smooth' })
-    // document.querySelector(`#${page}`).scroll({ top: 100, left: 0, behavior: 'smooth' })
-    // window.scrollTo({ left: 0, top: 1000, behavior: 'smooth' })
   }
 
   return (
     <header>
       <nav className="large">
-        <img className="logo" src="/imgs/ngon-logo.png" alt="Ngon logo" onClick={() => navigate('start')} />
+        <img className="logo" src="/imgs/ngon-logo.png" alt="Ngon logo" onClick={() => navigate('start')} style={{ opacity: displayLogo ? 1 : 0 }} />
         <ul>
           <li onClick={() => navigate('dishes')}>
             Rätter

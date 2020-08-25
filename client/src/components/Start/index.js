@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import withPageWrapper from '../../hocs/withPageWrapper'
-import './style.css'
+// import './style.css'
 
 const Wrapper = styled.section`
   padding-top: 80px;

@@ -123,7 +123,7 @@ const Lunch = () => {
         </InfoText>
         <Dishes>
           {data.map(({ name, desc }, i) => (
-            <Dish>
+            <Dish key={i}>
               <Name>{i + 1}. {name}</Name>
               <Desc>{desc}</Desc>
             </Dish>

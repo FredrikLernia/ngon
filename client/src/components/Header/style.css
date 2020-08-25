@@ -57,6 +57,7 @@ header .small-menu li {
 
 header .logo {
   height: 35px;
+  transition: opacity 350ms ease;
 }
 
 header .hamburger {
