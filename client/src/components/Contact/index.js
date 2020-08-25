@@ -1,9 +1,8 @@
-import React from 'react';
-import withPageWrapper from '../../hocs/withPageWrapper';
-import './style.css';
+import React from "react";
+import withPageWrapper from "../../hocs/withPageWrapper";
+import "./style.css";
 
 const Contact = () => {
-
   return (
     <section className="contact">
       {/* <div className="row">
@@ -14,39 +13,37 @@ const Contact = () => {
         </div>
       </div> */}
       <div className="row">
-        <div className="max-width">
-
-       
-        <div className="column contact-info">
-          <h2 className="info-header">Här hittar du oss!</h2>
-          <ul>
-            <li>
-              <p className="info-item">Erik Dahlbergsgatan 3</p>
-            </li>
-            <li>
-              <p className="info-item">211 48 Malmö</p>
-            </li>
-            <li>
-              <a className="info-item" href="tel:040170175" target="_blank">
-                040 - 170 175
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="column opening-hours">
-        <h2 className="info-header">Öppettider</h2>
-          <ul>
-            <li>
-              <p className="info-item">mån - fre 10:00 - 20:00</p>
-            </li>
-            <li>
-              <p className="info-item">lördagar 12.00 - 22.00</p>
-            </li>
-            <li>
-              <p className="info-item">söndagar 12:00 - 19:00</p>
-            </li>
-          </ul>
-        </div>
+        <div className="contact-container">
+          <div className="column contact-info">
+            <h2 className="info-header">Här hittar du oss!</h2>
+            <ul>
+              <li>
+                <p className="info-item">Erik Dahlbergsgatan 3</p>
+              </li>
+              <li>
+                <p className="info-item">211 48 Malmö</p>
+              </li>
+              <li>
+                <a className="info-item" href="tel:040170175" target="_blank">
+                  040 - 170 175
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="column opening-hours">
+            <h2 className="info-header">Öppettider</h2>
+            <ul>
+              <li>
+                <p className="info-item">mån - fre 10:00 - 20:00</p>
+              </li>
+              <li>
+                <p className="info-item">lördagar 12.00 - 22.00</p>
+              </li>
+              <li>
+                <p className="info-item">söndagar 12:00 - 19:00</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="row align-bottom-container">

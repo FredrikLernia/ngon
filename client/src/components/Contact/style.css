@@ -1,6 +1,6 @@
 .contact {
     width: 100%;
-    padding-top: 80px;
+    /* padding-top: 80px; */
     background: #464440;
     display: flex;
     flex-direction: column;
@@ -24,9 +24,10 @@
     margin: 0px 0 20px 0px;
   }
 
-  .contact .max-width {
+  .contact .contact-container {
     margin: 0 auto;
     display: flex;
+    flex-direction: row;
     padding-top: 80px
   }
 
@@ -91,6 +92,9 @@
       }
    }
    @media (max-width: 576px) { 
+    .contact .contact-container {
+      flex-direction: column;
+    }
     .contact .opening-hours {
         height: 180px;
     }

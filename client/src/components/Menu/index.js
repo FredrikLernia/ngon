@@ -42,7 +42,7 @@ const Menu = () => {
   const scrollIntoMenu = () => {
     setMenu('')
     const element = document.getElementById('menus');
-    element.scrollTo({ behavior: 'smooth' });
+    element.scrollIntoView({ behavior: 'smooth' });
     setSubMenu('');
   };
 

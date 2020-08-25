@@ -136,11 +136,11 @@ ul {
   display: flex;
 }
 
-.scroll-div {
+.menus .scroll-div {
   text-align: center;
 }
 
-.scroll-back {
+.menus .scroll-back {
   border-radius: 50%;
   border: 2px solid;
   background: gray;
