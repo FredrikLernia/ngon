@@ -7,16 +7,16 @@
 body {
   font-family: 'Quicksand', sans-serif;
   color: #555;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 main {
-  height: 100vh;
-  overflow-y: auto;
+  /* height: 100vh;
+  overflow-y: auto; */
 }
 
 main.modal-open {
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 h1, h2, h3, h4, h5, h6 {
