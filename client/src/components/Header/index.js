@@ -53,7 +53,7 @@ const Header = ({ setModalOpen }) => {
         </ul>
       </nav>
       <nav className="small">
-        <img className="logo" src="/imgs/ngon-logo.png" alt="Ngon logo" onClick={() => navigate('start')} />
+        <img className="logo" src="/imgs/ngon-logo.png" alt="Ngon logo" onClick={() => navigate('start')} style={{ opacity: displayLogo ? 1 : 0 }} />
         <i className="fas fa-bars hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} />
         {mobileMenuOpen && (
           <div className="small-menu">
