@@ -7,7 +7,7 @@ const Wrapper = styled.section`
   // min-height: 100vh;
   // padding: 80px 0 80px;
   //padding: 80px 0 10px;
-  padding: 20px 0 0 0;
+  padding: 20px 0 30px 0;
   background-color: #575258;
   //background-color: #57544f;
 
@@ -125,7 +125,6 @@ const Text = styled.p`
 const Dots = styled.div`
   /* margin: 10px 0; */
   margin-top: 20px;
-  margin-bottom: 30px;
   width: 100%;
   display: flex;
   justify-content: center;

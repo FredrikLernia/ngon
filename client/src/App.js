@@ -13,18 +13,18 @@ const App = () => {
 
   // wip
   useEffect(() => {
-    document.querySelector(`#dishes`).scrollIntoView()
+    // document.querySelector(`#dishes`).scrollIntoView()
   }, [])
 
   return (
     <div className="App">
       <Header setModalOpen={setModalOpen} />
       <main className={modalOpen ? 'no-scroll' : ''}>
-        <Start id="start" /* color="green" */ />
+        <Start id="start" />
         <Dishes id="dishes" />
-        <Lunch id="lunch" /* color="yellow" */ />
-        <Menu id="menu" /* color="purple" */ />
-        <Contact id="contact" /* color="red" */ />
+        <Lunch id="lunch" />
+        <Menu id="menu" />
+        <Contact id="contact" />
       </main>
       <BookingModal open={modalOpen} setOpen={setModalOpen} />
     </div>
