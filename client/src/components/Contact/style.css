@@ -8,21 +8,15 @@
   
   .contact .row {
     display: flex;
-    /* flex-wrap: wrap; */
-    flex-direction: row;
-    /* margin-right: -15px;
-    margin-left: -15px; */
-    justify-content: center;
+    /* flex-direction: row;
+    justify-content: center; */
   }
   .contact .column {
-    /* position: relative; */
-    /* width: 100%; */
-    padding-right: 15px;
-    padding-left: 15px;
+    position: relative;
+    width: 100%;
   }
   
   .contact .header {
-    /* color: #ff6289; */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -32,6 +26,8 @@
 
   .contact .max-width {
     margin: 0 auto;
+    display: flex;
+    padding-top: 80px
   }
 
   .contact .contact-info{
@@ -61,7 +57,7 @@
   }
 
   .contact .align-bottom-container {
-    margin-top: auto;
+    flex: 1;
     align-items: flex-end;
   }
 

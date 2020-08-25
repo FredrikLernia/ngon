@@ -6,14 +6,17 @@ const Contact = () => {
 
   return (
     <section className="contact">
-      <div className="row">
+      {/* <div className="row">
         <div className="column">
           <div className="header">
             <h1>KONTAKT</h1>
           </div>
         </div>
-      </div>
-      <div className="row max-width">
+      </div> */}
+      <div className="row">
+        <div className="max-width">
+
+       
         <div className="column contact-info">
           <h2 className="info-header">Här hittar du oss!</h2>
           <ul>
@@ -43,6 +46,7 @@ const Contact = () => {
               <p className="info-item">söndagar 12:00 - 19:00</p>
             </li>
           </ul>
+        </div>
         </div>
       </div>
       <div className="row align-bottom-container">
