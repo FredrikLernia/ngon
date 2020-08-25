@@ -1,5 +1,11 @@
 .page {
   display: flex;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* padding-top: 80px; */
+}
+
+@media (min-width: 992px) {
+  .page {
+    min-height: calc(100vh - 80px);
+  }
 }

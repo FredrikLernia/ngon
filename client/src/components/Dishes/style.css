@@ -12,7 +12,7 @@
 .dishes .carousel-inner {
   width: 100%;
   display: flex;
-  transition: transform 1500ms ease;
+  transition: transform 1200ms ease;
 }
 
 .dishes .dish {

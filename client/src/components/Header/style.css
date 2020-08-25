@@ -56,7 +56,7 @@ header .small-menu li {
 }
 
 header .logo {
-  height: 48px;
+  height: 35px;
 }
 
 header .hamburger {
@@ -107,7 +107,7 @@ header button {
   }
   
   header .logo {
-    height: 48px;
+    height: 40px;
     cursor: pointer;
   }
   
@@ -145,7 +145,11 @@ header button {
 
 @media (min-width: 992px) {
   header .large {
-    padding: 0;
+    padding: 0 20px;
     width: 992px;
+  }
+
+  header .logo {
+    height: 48px;
   }
 }
