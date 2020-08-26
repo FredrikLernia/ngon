@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import withPageWrapper from '../../hocs/withPageWrapper'
-// import './style.css'
 import data from './data.json'
 
 const Wrapper = styled.section`
@@ -142,36 +141,6 @@ const Lunch = () => {
         </Images>
       </Content>
     </Wrapper>
-  )
-
-  return (
-    <section className="lunch">
-      <h1>Lunch</h1>
-      <p className="info">
-        Dagens lunch 99kr. Vardagar kl. 11:30-14:30
-        <br />
-        inkl. måltidsdrycka & sallad, läsk + 10kr
-      </p>
-      <div className="container">
-        {data.map(({ name, desc }, i) => (
-          <div key={i} className="lunch-item">
-            <h4>{i + 1}. {name}</h4>
-            <p>{desc}</p>
-          </div>
-        ))}
-      </div>
-      <div className="imgs-container">
-        <div className="img-wrapper">
-          <img src="/imgs/lunch/1.jpg" alt="Ngon lunch image" />
-        </div>
-        <div className="img-wrapper">
-          <img src="/imgs/lunch/2.jpg" alt="Ngon lunch image" />
-        </div>
-        <div className="img-wrapper">
-          <img src="/imgs/lunch/3.jpg" alt="Ngon lunch image" />
-        </div>
-      </div>
-    </section>
   )
 }
 
