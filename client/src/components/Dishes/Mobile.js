@@ -4,17 +4,11 @@ import data from './data.json'
 
 const Wrapper = styled.section`
   width: 100%;
-  // min-height: 100vh;
-  // padding: 80px 0 80px;
-  //padding: 80px 0 10px;
   padding: 20px 0 30px 0;
   background-color: #575258;
-  //background-color: #57544f;
 
   @media (min-width: 768px) {
-    // padding: 90px 0 90px;
     padding: 20px 0 10px;
-    //padding: 90px 0 20px;
   }
 
   @media (min-width: 992px) {
@@ -26,46 +20,11 @@ const Wrapper = styled.section`
   }
 `
 
-/* const Heading = styled.h1`
-  color: #f2f2f2;
-  margin-bottom: 20px;
-  font-size: 72px;
-` */
-
 const Window = styled.div`
   width: 100%;
   max-width: 992px;
   height: fit-content;
   overflow-x: hidden;
-  position: relative;
-
-  @media (min-width: 992px) {
-    // width: 1012px;
-
-    &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -50px;
-    width: 50px;
-    background-image: linear-gradient(to right, #57544f, rgba(0, 0, 0, 0));
-    z-index: 1;
-  }
-  
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -50px;
-    width: 50px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #57544f);
-    z-index: 1;
-  }
-  }
 `
 
 const Slide = styled.div.attrs(p => ({
@@ -123,14 +82,12 @@ const Text = styled.p`
 `
 
 const Dots = styled.div`
-  /* margin: 10px 0; */
   margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
 
   @media (min-width: 768px) {
-    /* margin: 20px 0 10px; */
     margin-bottom: 20px;
   }
 
@@ -190,7 +147,6 @@ const Mobile = () => {
 
   return (
     <Wrapper id="dishes">
-      {/* <Heading>Rätter</Heading> */}
       <Window>
         <Slide itemIndex={itemIndex} x={x} transition={transition} transitionTime={transitionTime} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
           {data.map(({ heading, text, img }, i) => (
