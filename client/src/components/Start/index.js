@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import withPageWrapper from '../../hocs/withPageWrapper'
-// import './style.css'
 
 const Wrapper = styled.section`
   padding-top: 80px;
@@ -35,28 +34,19 @@ const SubText = styled.p`
   }
 `
 
-const Start = () => {
+const Start = ({ setLogoOffsetTop }) => {
+  const logoRef = useRef()
+
+  useEffect(() => {
+    setLogoOffsetTop(logoRef.current.offsetTop + logoRef.current.offsetHeight)
+  }, [])
+
   return (
     <Wrapper>
-      <Logo src="imgs/ngon-logo.png" alt="Ngon logo" />
+      <Logo ref={logoRef} src="imgs/ngon-logo.png" alt="Ngon logo" />
       <SubText>A taste of Vietnam</SubText>
     </Wrapper>
   )
 }
-
-/* const Start = () => {
-  return (
-    <section className="start">
-      <div>
-        <div>
-          <img src="imgs/ngon-logo.png" alt="Ngon logo" />
-        </div>
-        <div>
-          <p>A taste of Vietnam</p>
-        </div>
-      </div>
-    </section>
-  )
-} */
 
 export default withPageWrapper(Start)

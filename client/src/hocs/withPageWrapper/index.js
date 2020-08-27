@@ -3,10 +3,10 @@ import './style.css'
 
 const isTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints
 
-const withPageWrapper = WrappedComponent => ({ id }) => {
+const withPageWrapper = WrappedComponent => props => {
   return (
-    <div id={id} className={isTouch ? 'page' : 'page no-touch'}>
-      <WrappedComponent />
+    <div id={props.id} className={isTouch ? 'page' : 'page no-touch'}>
+      <WrappedComponent {...props} />
     </div>
   )
 }
