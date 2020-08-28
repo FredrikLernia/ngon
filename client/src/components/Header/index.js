@@ -7,6 +7,8 @@ const Header = ({ logoOffsetTop, setModalOpen }) => {
   const [displayLogo, setDisplayLogo] = useState(false)
 
   useEffect(() => {
+    setDisplayLogo(window.scrollY > logoOffsetTop)
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > logoOffsetTop) {
         setDisplayLogo(true)
