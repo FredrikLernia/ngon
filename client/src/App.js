@@ -7,6 +7,7 @@ import Menu from './components/Menu'
 import Contact from './components/Contact'
 import BookingModal from './components/BookingModal'
 import Dishes from './components/Dishes'
+import Gallery from './components/Gallery'
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -19,6 +20,7 @@ const App = () => {
         <Start id="start" setLogoOffsetTop={setLogoOffsetTop} />
         <Dishes id="dishes" />
         <Lunch id="lunch" />
+        <Gallery />
         <Menu id="menu" />
         <Contact id="contact" />
       </main>
