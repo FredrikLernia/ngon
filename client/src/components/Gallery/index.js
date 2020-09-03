@@ -41,7 +41,7 @@ const Gallery = () => {
             <img className="img" src="/imgs/lunch/3.jpg" alt="Ngon lunch iage" />
           </div>
           <div>
-            <img className="img" src="/imgs/lunch/3.jpg" alt="Ngon lunch imag" />
+            <img className="img" src="/imgs/imgcollection/summerrole.jpg" alt="Ngon lunch imag" />
           </div>
         </div>
       </div>
