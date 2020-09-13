@@ -17,7 +17,7 @@ const Gallery = () => {
         </div>
         <div className="column">
           <div>
-            <img className="img" src="/imgs/lunch/3.jpg" alt="Ngon lunch iage" />
+            <img className="img" src="/imgs/imgcollection/downstairs.jpg" alt="Ngon lunch iage" />
           </div>
           <div>
             <img className="img" src="/imgs/imgcollection/hats.jpg" alt="Ngon lunch imag" />
@@ -27,21 +27,21 @@ const Gallery = () => {
           <div>
             <img
             className="img"
-              src="/imgs/imgcollection/summerrole.jpg"
+              src="/imgs/imgcollection/twodishes.jpg"
               alt="Ngon lunch iage"
             />
           </div>
           <div>
             
-            <img className="img" src="/imgs/lunch/3.jpg" alt="Ngon lunch imag" />
+            <img className="img" src="/imgs/imgcollection/closeup.jpg" alt="Ngon lunch imag" />
           </div>
         </div>
         <div className="column">
           <div>
-            <img className="img" src="/imgs/lunch/3.jpg" alt="Ngon lunch iage" />
+            <img className="img" src="/imgs/imgcollection/threebuddahs.jpg" alt="Ngon lunch iage" />
           </div>
           <div>
-            <img className="img" src="/imgs/imgcollection/summerrole.jpg" alt="Ngon lunch imag" />
+            <img className="img" src="/imgs/imgcollection/buddah2.jpg" alt="Ngon lunch imag" />
           </div>
         </div>
       </div>

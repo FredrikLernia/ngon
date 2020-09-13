@@ -30,7 +30,7 @@
   max-width: 992px;
   margin: 0 auto;
   margin-bottom: 5px;
-  background: #faf8f8;;
+  background: #faf8f8;
   border-radius: 15px;
 }
 
@@ -44,8 +44,10 @@
   justify-content: center;
 }
 .menu-card:hover{
-  background-color: #e2e0e0;
+  /* background-color: #e2e0e0; */
+  background-color: #464440;
   border-radius: 15px;
+  color: #f2f2f2;
 }
 
 .menu-card .image {
@@ -54,6 +56,9 @@
   height: 110px;
   border: 1px solid darkgrey;
   border-radius: 50%;
+}
+.menu-card:hover .image {
+  background-color:#faf8f8;
 }
 
 .menu-card .menu-name {
@@ -161,7 +166,7 @@ ul {
 
 @media (max-width: 1200px) { }
 
-/* @media (min-width: 992px) { ... } */
+/* @media (max-width: 992px) { } */
 
 /* @media (max-width: 768px) { } */
  @media (max-width: 576px) { 
