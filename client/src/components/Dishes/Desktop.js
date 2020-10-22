@@ -6,7 +6,7 @@ import data from './data.json'
 const Wrapper = styled.section`
   width: 100%;
   padding: 20px 0 0 0;
-  background-color: #575258;
+  background-color: #464440;
   display: flex;
   flex-direction: column;
   align-items: center;

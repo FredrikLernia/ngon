@@ -5,13 +5,6 @@ import "./style.css";
 const Contact = () => {
   return (
     <section className="contact">
-      {/* <div className="row">
-        <div className="column">
-          <div className="header">
-            <h1>KONTAKT</h1>
-          </div>
-        </div>
-      </div> */}
       <div className="row">
         <div className="contact-container">
           <div className="column contact-info">
@@ -24,7 +17,7 @@ const Contact = () => {
                 <p className="info-item">211 48 Malmö</p>
               </li>
               <li>
-                <a className="info-item" href="tel:040170175" target="_blank">
+                <a className="info-item" href="tel:040170175" target="_blank"  rel="noopener noreferrer">
                   040 - 170 175
                 </a>
               </li>
@@ -34,13 +27,45 @@ const Contact = () => {
             <h2 className="info-header">Öppettider</h2>
             <ul>
               <li>
-                <p className="info-item">mån - fre 10:00 - 20:00</p>
+                <p className="info-item">mån - fre 11:30 - 21:00</p>
               </li>
               <li>
-                <p className="info-item">lördagar 12.00 - 22.00</p>
+                <p className="info-item">lördagar 12.00 - 21.00</p>
               </li>
               <li>
-                <p className="info-item">söndagar 12:00 - 19:00</p>
+                <p className="info-item">söndagar 13:00 - 21:00</p>
+              </li>
+              <li>
+                <p className="info-extra">Alla röda dagar öppet som söndagar</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="column">
+          <div className="social-contact">
+            <ul>
+              <li className="social-item">
+                <a
+                  href="https://www.facebook.com/pages/category/Pho-Restaurant/Restaurang-Ngon-1124653647745422/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i className="fab fa-facebook-square social-icon"></i>
+                </a>
+              </li>
+              <li className="social-item">
+                <a
+                  href="https://www.instagram.com/explore/locations/1124653647745422/restaurang-ngon/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i className="fab fa-instagram social-icon"></i>
+                </a>
+              </li>
+              <li className="social-item">
+                  <i className="fas fa-envelope social-icon"></i>
               </li>
             </ul>
           </div>

@@ -6,7 +6,7 @@ const Wrapper = styled.section`
   padding-top: 80px;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),url('imgs/heroImg.jpg');
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.2)),url('imgs/heroImg.jpg');
   background-size: cover;
   background-attachment: fixed;
   display: flex;

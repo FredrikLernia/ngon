@@ -56,6 +56,33 @@
     font-size: 25px;
     color: #f2f2f2;
   }
+  .contact .info-extra {
+    font-size: 18px;
+    color: darkorange;
+  }
+
+  .contact .social-contact {
+    margin-top: 15px;
+    text-align: center;
+  }
+  .contact .social-contact ul{
+    display: inline-flex;
+  }
+  .contact .social-contact .social-item {
+    font-size: 50px;
+    color: #f2f2f2;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .contact a .social-icon {
+    color: #f2f2f2;
+  }
+
+  .contact a .social-icon:hover {
+    color: #b8b4b4;
+  }
 
   .contact .align-bottom-container {
     flex: 1;

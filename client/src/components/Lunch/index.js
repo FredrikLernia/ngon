@@ -82,11 +82,14 @@ const Desc = styled.p``
 const Images = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: 768px) {
+    display:none;
+  }
 `
 
 const ImgWrapper = styled.div`
   flex: 1;
-  display: ${p => p.displaySmall ? 'block' : 'none'};
+  display: '${p => p.displaySmall ? 'block' : 'none'}';
 
   @media (min-width: 768px) {
     display: ${p => p.displayMedium ? 'block' : 'none'};

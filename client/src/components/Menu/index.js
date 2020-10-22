@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import withPageWrapper from '../../hocs/withPageWrapper';
 import jsonData from '../data/menu.json';
+import Fade from 'react-reveal/Fade';
 import './style.css';
 
 const Menu = () => {
@@ -9,7 +10,9 @@ const Menu = () => {
 
   const getMenuItems = (data, index) => (
     <div className="list" key={index}>
+      <Fade left>
       <div className="name">
+        <span className="id">{data.id}.</span>
         <div>{data.name}</div>
         <div className="price"></div>
         <div>{data.price}</div>
@@ -21,17 +24,18 @@ const Menu = () => {
       )}
       <p className="ingredients">{data.ingredients}</p>
       {data.allergy ? (
-        <p className="allergy">*innehåller spår av: {data.allergy}</p>
+        <p className="allergy">* innehåller spår av: {data.allergy}</p>
       ) : (
         ''
       )}
+    </Fade>
     </div>
   );
 
   const onMenuItemClick = (category) => {
     if (category === menu) {
-      setMenu('');
       setSubMenu('');
+      setMenu('');
       return;
     }
 
@@ -39,12 +43,12 @@ const Menu = () => {
     setTimeout(() => setSubMenu(category), 500);
   };
 
-  const scrollIntoMenu = () => {
-    setMenu('')
-    const element = document.getElementById('menus');
-    element.scrollIntoView({ behavior: 'smooth' });
-    setSubMenu('');
-  };
+  // const scrollIntoMenu = () => {
+  //   setMenu('')
+  //   const element = document.getElementById('menus').scroll({top:0,behavior:'smooth'})
+  //   element.scrollIntoView({ behavior: 'smooth' });
+  //   setSubMenu('');
+  // };
 
   return (
     <section id="menus" className="menus">
@@ -62,21 +66,25 @@ const Menu = () => {
           </div> */}
 
           <ul>
-            <div className="card-wrapper">
-              <li className="menu-card" onClick={() => onMenuItemClick('kids')}>
-                <img className="image" src="./imgs/menu/kids.jpg" alt="" />
-                <h2 className="menu-name">Barnrätter</h2>
+             {/* Förrätter  */}
+          <div className="card-wrapper">
+              <li
+                className="menu-card"
+                onClick={() => onMenuItemClick('sides')}
+              >
+                <img className="image" src="./imgs/menu/sides.jpg" alt="" />
+                <h2 className="menu-name">Förrätter</h2>
               </li>
-              {menu === 'kids' && (
+              {menu === 'sides' && (
                 <div className="relative">
                   <div
-                    className={subMenu === 'kids' ? 'menu-dishes open' : 'menu-dishes'}
+                    className={subMenu === 'sides' ? 'menu-dishes open' : 'menu-dishes'}
                   >
                     {jsonData
-                      .filter(({ category }) => category === 'kids')
+                      .filter(({ category }) => category === 'sides')
                       .map((dishes, i) => getMenuItems(dishes, i))}
                   </div>
-                  <div className="scroll-div">
+                  {/* <div className="scroll-div">
                     <button
                       className="scroll-back"
                       type="button"
@@ -84,10 +92,11 @@ const Menu = () => {
                     >
                       <i className="fa fa-chevron-up" aria-hidden="true"></i>
                     </button>
-                  </div>
+                  </div> */}
                 </div>
-              )}
+              ) }
             </div>
+            {/* Nudelrätter*/}
             <div className="card-wrapper">
               <li
                 className="menu-card"
@@ -105,7 +114,7 @@ const Menu = () => {
                       .filter(({ category }) => category === 'noodles')
                       .map((dishes, i) => getMenuItems(dishes, i))}
                   </div>
-                  <div className="scroll-div">
+                  {/* <div className="scroll-div">
                     <button
                       className="scroll-back"
                       type="button"
@@ -113,11 +122,12 @@ const Menu = () => {
                     >
                       <i className="fa fa-chevron-up" aria-hidden="true"></i>
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
-            <div className="card-wrapper">
+             {/* Risrätter*/}
+             <div className="card-wrapper">
               <li className="menu-card" onClick={() => onMenuItemClick('rice')}>
                 <img className="image" src="./imgs/menu/rice.jpg" alt="" />
                 <h2 className="menu-name">Risrätter</h2>
@@ -131,7 +141,7 @@ const Menu = () => {
                       .filter(({ category }) => category === 'rice')
                       .map((dishes, i) => getMenuItems(dishes, i))}
                   </div>
-                  <div className="scroll-div">
+                  {/* <div className="scroll-div">
                     <button
                       className="scroll-back"
                       type="button"
@@ -139,11 +149,13 @@ const Menu = () => {
                     >
                       <i className="fa fa-chevron-up" aria-hidden="true"></i>
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
-            <div className="card-wrapper">
+            
+             {/* Friterade rätter*/}
+             <div className="card-wrapper">
               <li
                 className="menu-card"
                 onClick={() => onMenuItemClick('fried')}
@@ -160,7 +172,7 @@ const Menu = () => {
                       .filter(({ category }) => category === 'fried')
                       .map((dishes, i) => getMenuItems(dishes, i))}
                   </div>
-                  <div className="scroll-div">
+                  {/* <div className="scroll-div">
                     <button
                       className="scroll-back"
                       type="button"
@@ -168,28 +180,27 @@ const Menu = () => {
                     >
                       <i className="fa fa-chevron-up" aria-hidden="true"></i>
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
+
+             {/* Barnrätter*/}
             <div className="card-wrapper">
-              <li
-                className="menu-card"
-                onClick={() => onMenuItemClick('sides')}
-              >
-                <img className="image" src="./imgs/menu/sides.jpg" alt="" />
-                <h2 className="menu-name">Förrätter</h2>
+              <li className="menu-card" onClick={() => onMenuItemClick('kids')}>
+                <img className="image" src="./imgs/menu/kids.jpg" alt="" />
+                <h2 className="menu-name">Barnrätter</h2>
               </li>
-              {menu === 'sides' && (
+              {menu === 'kids' && (
                 <div className="relative">
                   <div
-                    className={subMenu === 'sides' ? 'menu-dishes open' : 'menu-dishes'}
+                    className={subMenu === 'kids' ? 'menu-dishes open' : 'menu-dishes'}
                   >
                     {jsonData
-                      .filter(({ category }) => category === 'sides')
+                      .filter(({ category }) => category === 'kids')
                       .map((dishes, i) => getMenuItems(dishes, i))}
                   </div>
-                  <div className="scroll-div">
+                  {/* <div className="scroll-div">
                     <button
                       className="scroll-back"
                       type="button"
@@ -197,7 +208,38 @@ const Menu = () => {
                     >
                       <i className="fa fa-chevron-up" aria-hidden="true"></i>
                     </button>
+                  </div> */}
+                </div>
+              )}
+            </div>
+   
+            {/* Efterrätter*/}
+            <div className="card-wrapper">
+              <li
+                className="menu-card"
+                onClick={() => onMenuItemClick('desserts')}
+              >
+                <img className="image" src="./imgs/menu/sides.jpg" alt="" />
+                <h2 className="menu-name">Efterrätter</h2>
+              </li>
+              {menu === 'desserts' && (
+                <div className="relative">
+                  <div
+                    className={subMenu === 'desserts' ? 'menu-dishes open' : 'menu-dishes'}
+                  >
+                    {jsonData
+                      .filter(({ category }) => category === 'desserts')
+                      .map((dishes, i) => getMenuItems(dishes, i))}
                   </div>
+                  {/* <div className="scroll-div">
+                    <button
+                      className="scroll-back"
+                      type="button"
+                      onClick={() => scrollIntoMenu()}
+                    >
+                      <i className="fa fa-chevron-up" aria-hidden="true"></i>
+                    </button>
+                  </div> */}
                 </div>
               )}
             </div>

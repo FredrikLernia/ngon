@@ -5,7 +5,7 @@ import data from './data.json'
 const Wrapper = styled.section`
   width: 100%;
   padding: 20px 0 30px 0;
-  background-color: #575258;
+  background-color: #464440;
 
   @media (min-width: 768px) {
     padding: 20px 0 10px;
