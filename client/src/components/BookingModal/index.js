@@ -13,7 +13,7 @@ const BookingModal = ({ open, setOpen }) => {
       {open && (
         <>
           <button className="close-btn" onClick={() => setOpen(false)}>
-            <i class="fas fa-times"></i>
+            <i className="fas fa-times"></i>
           </button>
           <iframe src="https://module.lafourchette.com/sv_SE/module/477061-94b52" />
         </>
