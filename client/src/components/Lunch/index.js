@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import withPageWrapper from '../../hocs/withPageWrapper'
-import data from './data.json'
 import { db } from '../../firebase'
 
 const Wrapper = styled.section`

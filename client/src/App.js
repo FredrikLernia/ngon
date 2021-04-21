@@ -15,16 +15,6 @@ const App = () => {
   const [modalOpen, setModalOpen] = useState(false)
   const [logoOffsetTop, setLogoOffsetTop] = useState()
 
-  useEffect(() => {
-    const getData = async () => {
-      const response = await fetch('http://localhost:5000')
-      const data = await response.json()
-      console.log(data)
-    }
-
-    getData()
-  }, [])
-
   return (
     <div className="App">
       <Router>

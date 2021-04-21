@@ -8,7 +8,7 @@ const Login = () => {
   const [status, setStatus] = useState()
 
   const login = async () => {
-    const user = await auth.signInWithEmailAndPassword(email, password).catch(error => console.error(error))
+    const user = await auth.signInWithEmailAndPassword(email, password).catch(error => console.error('Fel e-post eller lösenord'))
 
     if (!user) {
       setStatus('error')

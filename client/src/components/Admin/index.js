@@ -25,7 +25,7 @@ const Admin = () => {
         page && (
           <Box>
             {
-              page === 'manage' ? <Manage loading={loading} setLoading={setLoading} />: <Login loading={loading} />
+              page === 'manage' ? <Manage loading={loading} setLoading={setLoading} /> : <Login loading={loading} />
             }
           </Box>
         )

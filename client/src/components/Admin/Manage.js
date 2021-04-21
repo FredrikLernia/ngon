@@ -77,14 +77,15 @@ const Manage = ({ setLoading }) => {
         }
       })
         .catch(error => {
-          setStatus('error')
           console.error(error)
+          setStatus('error')
+          setLoading(false)
         })
     })
   }
 
   const logout = () => {
-    auth.signOut().then().catch(error => console.error(error))
+    auth.signOut()
   }
 
   return (
