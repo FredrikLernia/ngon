@@ -35,7 +35,7 @@ const Login = () => {
         />
       </InputGroup>
       {
-        status && <StatusText status="error">Fel användarnamn eller lösenord</StatusText>
+        status && <StatusText status="error">Fel e-post eller lösenord</StatusText>
       }
       <Button onClick={login}>Logga in</Button>
     </>
