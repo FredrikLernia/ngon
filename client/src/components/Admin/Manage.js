@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { InputGroup, Top, Label, Input, Textarea, Button, StatusText } from './styled'
+import { InputGroup, Top, Label, Input, Textarea, Button, StatusText, SignOutButton, SignOutIcon } from './styled'
 import { db, auth } from '../../firebase'
 
 const emptyState = [
@@ -89,8 +89,10 @@ const Manage = ({ setLoading }) => {
 
   return (
     <>
-      <Top>
-        <button onClick={logout}>logout</button>
+      <Top flexEnd>
+        <SignOutButton onClick={logout} title="Logga ut">
+          <SignOutIcon className="fas fa-sign-out-alt" />
+        </SignOutButton>
       </Top>
       {
         lunches.map(({ name, desc }, i) => (

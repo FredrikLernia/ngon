@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { auth } from '../../firebase'
 import { Input, InputGroup, Label, Button, StatusText } from './styled'
 
-const Login = ({ setLoading }) => {
+const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [status, setStatus] = useState()
@@ -19,11 +19,20 @@ const Login = ({ setLoading }) => {
     <>
       <InputGroup>
         <Label login>E-post</Label>
-        <Input value={email} onChange={e => setEmail(e.target.value)} login />
+        <Input
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          login
+        />
       </InputGroup>
       <InputGroup>
         <Label login>Lösenord</Label>
-        <Input type="password" value={password} onChange={e => setPassword(e.target.value)} login />
+        <Input
+          type="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          login
+        />
       </InputGroup>
       {
         status && <StatusText status="error">Fel användarnamn eller lösenord</StatusText>

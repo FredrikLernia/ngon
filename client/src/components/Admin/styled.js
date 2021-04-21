@@ -27,6 +27,7 @@ export const Top = styled.div`
   margin-bottom: 10px;
   display: flex;
   align-items: flex-end;
+  justify-content: ${p => p.flexEnd ? 'flex-end' : 'flex-start'};
 `
 
 export const Label = styled.label`
@@ -93,6 +94,21 @@ export const Button = styled.button`
   }
 `
 
+export const SignOutButton = styled.button`
+  padding: 6px 10px;
+  background-color: #406f3b;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+`
+
+export const SignOutIcon = styled.em``
+
 export const StatusText = styled.div`
   margin-bottom: 20px;
   font-family: 'Quicksand';
@@ -120,76 +136,76 @@ const ldsSpinner = keyframes`
 `
 
 export const Spinner = styled.div`
-color: official;
-display: inline-block;
-position: absolute;
-top: calc(50% - 40px);
-left: calc(50% - 40px);
-width: 80px;
-height: 80px;
-
-& div {
-  transform-origin: 40px 40px;
-  animation: ${ldsSpinner} 1.2s linear infinite;
-}
-
-& div:after {
-  content: " ";
-  display: block;
+  color: official;
+  display: inline-block;
   position: absolute;
-  top: 3px;
-  left: 37px;
-  width: 6px;
-  height: 18px;
-  border-radius: 20%;
-  background: #fff;
-}
-& div:nth-child(1) {
-  transform: rotate(0deg);
-  animation-delay: -1.1s;
-}
-& div:nth-child(2) {
-  transform: rotate(30deg);
-  animation-delay: -1s;
-}
-& div:nth-child(3) {
-  transform: rotate(60deg);
-  animation-delay: -0.9s;
-}
-& div:nth-child(4) {
-  transform: rotate(90deg);
-  animation-delay: -0.8s;
-}
-& div:nth-child(5) {
-  transform: rotate(120deg);
-  animation-delay: -0.7s;
-}
-& div:nth-child(6) {
-  transform: rotate(150deg);
-  animation-delay: -0.6s;
-}
-& div:nth-child(7) {
-  transform: rotate(180deg);
-  animation-delay: -0.5s;
-}
-& div:nth-child(8) {
-  transform: rotate(210deg);
-  animation-delay: -0.4s;
-}
-& div:nth-child(9) {
-  transform: rotate(240deg);
-  animation-delay: -0.3s;
-}
-& div:nth-child(10) {
-  transform: rotate(270deg);
-  animation-delay: -0.2s;
-}
-& div:nth-child(11) {
-  transform: rotate(300deg);
-  animation-delay: -0.1s;
-}
-& div:nth-child(12) {
-  transform: rotate(330deg);
-  animation-delay: 0s;
-}
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+
+  & div {
+    transform-origin: 40px 40px;
+    animation: ${ldsSpinner} 1.2s linear infinite;
+  }
+
+  & div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #fff;
+  }
+  & div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+  }
+  & div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+  }
+  & div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+  }
+  & div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+  }
+  & div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+  }
+  & div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+  }
+  & div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+  }
+  & div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+  }
+  & div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+  }
+  & div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+  }
+  & div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+  }
+  & div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+  }
 `
