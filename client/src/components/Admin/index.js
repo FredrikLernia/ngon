@@ -1,92 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import { Wrapper, Box, InputGroup, Top, Label, Input, Textarea, Button, SpinnerWrapper, Spinner } from './styled'
-
-const emptyState = [
-  {
-    name: '',
-    desc: ''
-  },
-  {
-    name: '',
-    desc: ''
-  },
-  {
-    name: '',
-    desc: ''
-  },
-  {
-    name: '',
-    desc: ''
-  }
-]
+import { Wrapper, Box, SpinnerWrapper, Spinner } from './styled'
+import { auth } from '../../firebase'
+import Login from './Login'
+import Manage from './Manage'
 
 const Admin = () => {
-  const [lunches, setLunches] = useState(emptyState)
-  const [validation, setValidation] = useState(false)
+  const [page, setPage] = useState()
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if (loading) {
-      setTimeout(() => setLoading(false), 2000)
-    }
-  }, [loading])
-
-  const validate = () => {
-    const newValidation = lunches.map(({ name, desc }) => ({ name: name.length > 0, desc: desc.length > 0 }))
-    setValidation(newValidation)
-
-    return !newValidation.some(({ name, desc }) => !name || !desc)
-  }
-
-  const onChange = (idx, key, value) => {
-    const newLunches = [...lunches]
-    newLunches[idx][key] = value
-    setLunches(newLunches)
-
-    if (validation) {
-      validate()
-    }
-  }
-
-  const update = () => {
-    console.log(validate())
-    if (!validate()) {
-      console.log(validation)
-      return
-    }
-
-    setLoading(true)
-  }
-
-  console.log('render')
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        setPage('manage')
+      }
+      else {
+        setPage('login')
+      }
+    })
+  }, [])
 
   return (
     <Wrapper>
-      <Box>
-        {
-          lunches.map(({ name, desc }, i) => (
-            <InputGroup key={i}>
-              <Top>
-                <Label>{i + 1}.</Label>
-                <Input
-                  value={name}
-                  onChange={e => onChange(i, 'name', e.target.value)}
-                  placeholder="Rubrik"
-                  error={validation && !validation[i].name}
-                />
-              </Top>
-              <Textarea
-                rows="5"
-                value={desc}
-                onChange={e => onChange(i, 'desc', e.target.value)}
-                placeholder="Beskrivning..."
-                error={validation && !validation[i].desc}
-              />
-            </InputGroup>
-          ))
-        }
-        <Button onClick={update}>Uppdatera</Button>
-      </Box>
+      {
+        page && (
+          <Box>
+            {
+              page === 'manage' ? <Manage loading={loading} setLoading={setLoading} />: <Login loading={loading} setLoading={setLoading} />
+            }
+          </Box>
+        )
+      }
       {
         loading
           ? (

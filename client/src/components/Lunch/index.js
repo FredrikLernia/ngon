@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import withPageWrapper from '../../hocs/withPageWrapper'
 import data from './data.json'
+import { db } from '../../firebase'
 
 const Wrapper = styled.section`
   padding: 30px 0;
@@ -116,6 +117,14 @@ const Img = styled.img`
 `
 
 const Lunch = () => {
+  const [lunches, setLunches] = useState([])
+
+  useEffect(() => {
+    db.collection('lunches').get().then(querySnapshot => {
+      setLunches(querySnapshot.docs.map(doc => doc.data()))
+    }).catch(error => console.error(error))
+  }, [])
+
   return (
     <Wrapper>
       <Content>
@@ -124,7 +133,7 @@ const Lunch = () => {
           Dagens lunch 99:- inkl. sallad & måltidsdryck. Vardagar kl 11:30-14:30 
         </InfoText>
         <Dishes>
-          {data.map(({ name, desc }, i) => (
+          {lunches.map(({ name, desc }, i) => (
             <Dish key={i}>
               <Name>{i + 1}. {name}</Name>
               <Desc>{desc}</Desc>

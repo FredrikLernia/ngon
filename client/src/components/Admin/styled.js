@@ -30,7 +30,9 @@ export const Top = styled.div`
 `
 
 export const Label = styled.label`
+  margin-bottom: ${p => p.login ? '8px' : 0};
   margin-right: 15px;
+  display: ${p => p.login ? 'block' : 'inline'};
   font-family: 'Amatic SC';
   font-size: 30px;
   color: #406f3b;
@@ -39,10 +41,12 @@ export const Label = styled.label`
 export const Input = styled.input`
   flex: 1;
   padding: 0;
-  padding-bottom: 3px;
-  font-family: 'Amatic SC';
-  font-size: 26px;
-  color: #406f3b;
+  padding-bottom: ${p => p.login ? '6px' : '3px'};
+  width: auto;
+  width: 100%;
+  font-family: ${p => p.login ? 'Quicksand' : 'Amatic SC'};
+  font-size: ${p => p.login ? '16px' : '26px'};
+  color: ${p => p.login ? '#333' : '#406f3b'};
   border: none;
   border-bottom: ${p => p.error ? '2px solid red' : '2px solid #406f3b'};
 
@@ -87,6 +91,13 @@ export const Button = styled.button`
   &:focus {
     outline: none;
   }
+`
+
+export const StatusText = styled.div`
+  margin-bottom: 20px;
+  font-family: 'Quicksand';
+  font-size: 16px;
+  color: ${p => p.status === 'success' ? 'green' : 'red'};
 `
 
 export const SpinnerWrapper = styled.div`
