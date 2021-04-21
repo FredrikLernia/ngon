@@ -9,7 +9,7 @@ const Login = () => {
 
   const login = async () => {
     const user = await auth.signInWithEmailAndPassword(email, password).catch(error => console.error(error))
-    
+
     if (!user) {
       setStatus('error')
     }
@@ -21,7 +21,7 @@ const Login = () => {
         <Label login>E-post</Label>
         <Input
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={e => { setEmail(e.target.value); setStatus() }}
           login
         />
       </InputGroup>
@@ -30,7 +30,7 @@ const Login = () => {
         <Input
           type="password"
           value={password}
-          onChange={e => setPassword(e.target.value)}
+          onChange={e => { setPassword(e.target.value); setStatus() }}
           login
         />
       </InputGroup>
