@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 /Ngon_Portfolio
+.firebaserc
+firebase.json
+firestore.indexes.json
+firestore.rules
+yarn.lock
+/.firebase
