@@ -1,27 +1,27 @@
 [
   {
     "heading": "Phở.",
-    "text": ["Phở, som är en soppa är Vietnams national rätt. Våran Phở är från den norra sidan av Vietnam och man kan äta den till middag, frukost eller närsomhelst, den kommer alltid värma upp hela kroppen under en kall vinterkväll."],
-    "img": ""
+    "text": ["Phở är en soppa som är Vietnams nationalrätt. Våran Phở är från den norra sidan av Vietnam och man kan äta den till middag, frukost eller när som helst. Den kommer alltid värma upp hela kroppen under en kall vinterkväll."],
+    "img": "/imgs/dishes/pho.JPG"
   },
   {
     "heading": "Anka.",
-    "text": ["Våran anka är inte bara krispig, den är även saftig och fylld med smak. Den är bäst med det stekta riset och den söta hoisinsås livar upp hela tallriken, en av våra gästers favoriträtter."],
-    "img": ""
+    "text": ["Vår anka är inte bara krispig, den är även saftig och fylld med smak. Den är bäst med det stekta riset och den söta hoisinsåsen livar upp hela tallriken, en av våra gästers favoriträtter."],
+    "img": "/imgs/dishes/anka.jpg"
   },
   {
     "heading": "Vårrullar.",
     "text": ["Sommar-vårrullar är en trevlig och fräsch rätt, den söta hemgjorda hoisinsåsen tillsammans med myntabladen och rispapperna är en otroligt fräsch kombo."],
-    "img": ""
+    "img": "/imgs/dishes/varrulle.JPG"
   },
   {
     "heading": "Friterade vårrullar.",
     "text": ["De friterade vårrullarna i rispapper är bland det godaste på menyn. Frasiga o fylliga. Kvittar om du tar dem vegetariska eller med kött. De är båda magiska med vår fisksås med chill och vitlök till."],
-    "img": ""
+    "img": "/imgs/dishes/friterad-varrulle.JPG"
   },
   {
     "heading": "Grillad fläsk.",
     "text": ["Grillad fläsk med risnudlar. En fräsch rätt som serveras med isbergssallad, picklad kålsallad, gurka, mynta och såklart våran fisksås som man häller över och sen blandar ihop. Perfekt för en söndagslunch eller till middag."],
-    "img": ""
+    "img": "/imgs/dishes/grillad_flask.jpg"
   }
 ]

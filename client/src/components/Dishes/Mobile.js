@@ -28,10 +28,10 @@ const Window = styled.div`
 `
 
 const Slide = styled.div.attrs(p => ({
-  style: {
-    transform: `translateX(calc(${-p.itemIndex * 100}% - ${p.x}px))`
-  }
-}))`
+    style: {
+      transform: `translateX(calc(${-p.itemIndex * 100}% - ${p.x}px))`
+    }
+  })) `
   display: flex;
   height: 100%;
   transition: ${p => p.transition ? `transform ${p.transitionTime}ms ease` : 'none'};

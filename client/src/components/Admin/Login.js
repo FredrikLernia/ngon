@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { auth } from '../../firebase'
-import { Input, InputGroup, Label, Button, StatusText } from './styled'
+import { Form, Input, InputGroup, Label, Button, StatusText } from './styled'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [status, setStatus] = useState()
 
-  const login = async () => {
+  const login = async e => {
+    e.preventDefault()
     const user = await auth.signInWithEmailAndPassword(email, password).catch(error => console.error('Fel e-post eller lösenord'))
 
     if (!user) {
@@ -16,7 +17,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <Form onSubmit={login}>
       <InputGroup>
         <Label login>E-post</Label>
         <Input
@@ -37,8 +38,8 @@ const Login = () => {
       {
         status && <StatusText status="error">Fel e-post eller lösenord</StatusText>
       }
-      <Button onClick={login}>Logga in</Button>
-    </>
+      <Button>Logga in</Button>
+    </Form>
   )
 }
 

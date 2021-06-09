@@ -5,72 +5,6 @@ import "./style.css";
 const Contact = () => {
   return (
     <section className="contact">
-      <div className="row">
-        <div className="contact-container">
-          <div className="column contact-info">
-            <h2 className="info-header">Här hittar du oss!</h2>
-            <ul>
-              <li>
-                <p className="info-item">Erik Dahlbergsgatan 3</p>
-              </li>
-              <li>
-                <p className="info-item">211 48 Malmö</p>
-              </li>
-              <li>
-                <a className="info-item" href="tel:040170175" target="_blank"  rel="noopener noreferrer">
-                  040 - 170 175
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="column opening-hours">
-            <h2 className="info-header">Öppettider</h2>
-            <ul>
-              <li>
-                <p className="info-item">mån - fre 11:30 - 21:00</p>
-              </li>
-              <li>
-                <p className="info-item">lördagar 12.00 - 21.00</p>
-              </li>
-              <li>
-                <p className="info-item">söndagar 13:00 - 21:00</p>
-              </li>
-              <li>
-                <p className="info-extra">Alla röda dagar öppet som söndagar</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="column">
-          <div className="social-contact">
-            <ul>
-              <li className="social-item">
-                <a
-                  href="https://www.facebook.com/pages/category/Pho-Restaurant/Restaurang-Ngon-1124653647745422/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <i className="fab fa-facebook-square social-icon"></i>
-                </a>
-              </li>
-              <li className="social-item">
-                <a
-                  href="https://www.instagram.com/explore/locations/1124653647745422/restaurang-ngon/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <i className="fab fa-instagram social-icon"></i>
-                </a>
-              </li>
-              <li className="social-item">
-                  <i className="fas fa-envelope social-icon"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <div className="row align-bottom-container">
         <div className="column map">
           <iframe
@@ -82,6 +16,71 @@ const Contact = () => {
             tabIndex="0"
             title="Ngon Address"
           ></iframe>
+        </div>
+      </div>
+      <div className="row container">
+        <div className="footer-flex-wrapper">
+          <div>
+            <h2 className="info-header">Här hittar du oss!</h2>
+            <div className="footer-flex">
+              <div>
+                <p className="info-item">Erik Dahlbergsgatan 3</p>
+                <p className="info-item">211 48 Malmö</p>
+                <p className="info-item"><a href="tel:040170175">040 - 170 175</a></p>
+              </div>
+              <div className="second-city">
+                <p className="info-item">Traktorvägen 11</p>
+                <p className="info-item">226 60 Lund</p>
+                <p className="info-item"></p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h2 className="info-header">Öppettider</h2>
+              <div className="footer-flex">
+                <div>
+                  <h3>Malmö</h3>
+                  <p className="info-item">mån - fre 11:30 - 21:00</p>
+                  <p className="info-item">lördagar 12.00 - 21.00</p>
+                  <p className="info-item">söndagar 13:00 - 21:00</p>
+                </div>
+                <div className="second-city">
+                  <h3>Lund</h3>
+                  <p className="info-item">mån - fre 11:00 - 14:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="column">
+            <div className="social-contact">
+              <ul>
+                <li className="social-item">
+                  <a
+                    href="https://www.facebook.com/pages/category/Pho-Restaurant/Restaurang-Ngon-1124653647745422/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <i className="fab fa-facebook-square social-icon"></i>
+                  </a>
+                </li>
+                <li className="social-item">
+                  <a
+                    href="https://www.instagram.com/explore/locations/1124653647745422/restaurang-ngon/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <i className="fab fa-instagram social-icon"></i>
+                  </a>
+                </li>
+                <li className="social-item">
+                  <i className="fas fa-envelope social-icon"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

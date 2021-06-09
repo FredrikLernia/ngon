@@ -12,12 +12,15 @@ export const Box = styled.div`
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
+  box-shadow: 0 0 11px #aaa;
 
   @media (min-width: 380px) {
     margin: 0 auto;
     width: 350px;
   }
 `
+
+export const Form = styled.form``
 
 export const InputGroup = styled.div`
   margin-bottom: 20px;
@@ -27,7 +30,7 @@ export const Top = styled.div`
   margin-bottom: 10px;
   display: flex;
   align-items: flex-end;
-  justify-content: ${p => p.flexEnd ? 'flex-end' : 'flex-start'};
+  justify-content: ${p => p.spaceBetween ? 'space-between' : 'flex-start'};
 `
 
 export const Label = styled.label`
@@ -88,6 +91,34 @@ export const Button = styled.button`
   font-family: 'Amatic SC';
   font-size: 28px;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+`
+
+export const SwitchButtons = styled.div``
+
+export const SwitchButton = styled.button`
+  padding: 6px 10px;
+  background-color: ${p => p.active ? '#406f3b' : '#fff'};
+  color: ${p => p.active ? '#f5f5f5' : '#888'};
+  border: 2px solid #406f3b;
+  border-radius: 4px;
+  font-family: 'Quicksand';
+  cursor: pointer;
+
+  &:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+  }
+
+  &:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+  }
 
   &:focus {
     outline: none;

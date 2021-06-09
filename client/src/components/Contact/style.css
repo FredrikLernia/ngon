@@ -1,3 +1,63 @@
+.contact .container {
+  margin: auto;
+  width: 100%;
+  max-width: 992px;
+  padding: 0 20px;
+}
+
+.footer-flex-wrapper > div {
+  width: 100%;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-flex > div {
+  width: 100%;
+}
+
+.second-city {
+  margin-top: 20px;
+}
+
+@media (min-width: 576px) {
+  .footer-flex > div {
+    width: 50%;
+  }
+
+  .second-city {
+    margin-top: 0;
+  }
+}
+
+.footer-flex-wrapper h2 {
+  margin-top: 15px;
+}
+
+.footer-flex h3 {
+  color: #ff8c00;
+  text-align: center;
+  font-size: 24px;
+}
+
+@media (min-width: 992px) {
+  .footer-flex-wrapper {
+    display: flex;
+    /* justify-content: space-between; */
+  }
+
+  .footer-flex-wrapper h2 {
+    margin-top: 0;
+  }
+
+  /* .footer-flex > div:first-child {
+    margin-right: 60px;
+  } */
+}
+
 .contact {
     width: 100%;
     /* padding-top: 80px; */
@@ -6,7 +66,7 @@
     flex-direction: column;
   }
   
-  .contact .row {
+  .contact {
     display: flex;
     /* flex-direction: row;
     justify-content: center; */
@@ -48,12 +108,18 @@
   }
 
   .contact .info-header {
-    font-size: 35px;
+    font-size: 40px;
     color: #f2f2f2;
+    text-align: center;
   }
 
   .contact .info-item {
-    font-size: 25px;
+    font-size: 20px;
+    color: #f2f2f2;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .contact .info-item a {
     color: #f2f2f2;
   }
   .contact .info-extra {
@@ -69,7 +135,7 @@
     display: inline-flex;
   }
   .contact .social-contact .social-item {
-    font-size: 50px;
+    font-size: 40px;
     color: #f2f2f2;
     margin: 10px;
     cursor: pointer;
@@ -85,7 +151,6 @@
   }
 
   .contact .align-bottom-container {
-    flex: 1;
     align-items: flex-end;
   }
 
@@ -98,49 +163,4 @@
     height: 360px;
     /* border: 15px solid white; */
     margin-top: auto;
-  }
-
-  @media (max-width: 992px) { 
-    .contact .contact-info {
-        /* width: 100%; */
-        margin-bottom: 0;
-        margin-right: 0;
-    }
-    
-    .contact .opening-hours {
-        margin-left: 0;
-        /* width:100%; */
-      }
-   }
-
-  @media (max-width: 768px) { 
-    .contact .map-style {
-        height: 220px;
-      }
-   }
-   @media (max-width: 576px) { 
-    .contact .contact-container {
-      flex-direction: column;
-    }
-    .contact .opening-hours {
-        height: 180px;
-    }
-
-    .contact .contact-info {
-        height: 180px;
-    }
-
-    .contact .info-header {
-        font-size: 25px;
-        color: #f2f2f2;
-      }
-    
-      .contact .info-item {
-        font-size: 15px;
-        color: #f2f2f2;
-      }
-
-      .contact .map-style {
-        height: 280px;
-      }
   }

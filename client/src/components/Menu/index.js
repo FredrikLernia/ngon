@@ -65,7 +65,7 @@ const Menu = () => {
             <img className="menu-img" src="./imgs/menu-img.png" alt="something" />
           </div> */}
 
-          <ul>
+          <ul style={{ marginBottom: 30 }}>
              {/* Förrätter  */}
           <div className="card-wrapper">
               <li

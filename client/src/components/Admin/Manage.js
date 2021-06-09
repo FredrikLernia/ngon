@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { InputGroup, Top, Label, Input, Textarea, Button, StatusText, SignOutButton, SignOutIcon } from './styled'
+import { InputGroup, Top, Left, Right, Label, Input, Textarea, Button, StatusText, SwitchButton, SignOutButton, SignOutIcon, SwitchButtons } from './styled'
 import { db, auth } from '../../firebase'
 
 const emptyState = [
@@ -27,8 +27,10 @@ const emptyState = [
 
 const Manage = ({ setLoading }) => {
   const [lunches, setLunches] = useState(emptyState)
+  const [city, setCity] = useState('malmo')
   const [validation, setValidation] = useState(false)
   const [status, setStatus] = useState(undefined)
+  const [selectedCity, setSelectedCity] = useState('Malmö')
 
   useEffect(() => {
     setLoading(true)
@@ -90,32 +92,38 @@ const Manage = ({ setLoading }) => {
 
   return (
     <>
-      <Top flexEnd>
+      <Top spaceBetween>
+        <SwitchButtons>
+          <SwitchButton active={selectedCity === 'Malmö'} onClick={() => setSelectedCity('Malmö')}>Malmö</SwitchButton>
+          <SwitchButton active={selectedCity === 'Lund'} onClick={() => setSelectedCity('Lund')}>Lund</SwitchButton>
+        </SwitchButtons>
         <SignOutButton onClick={logout} title="Logga ut">
           <SignOutIcon className="fas fa-sign-out-alt" />
         </SignOutButton>
       </Top>
       {
-        lunches.map(({ name, desc }, i) => (
-          <InputGroup key={i}>
-            <Top>
-              <Label>{i + 1}.</Label>
-              <Input
-                value={name}
-                onChange={e => onChange(i, 'name', e.target.value)}
-                placeholder="Rubrik"
-                error={validation && !validation[i].name}
+        lunches.filter(({ city }) => city === selectedCity).map(({ name, desc, city }, i) => {
+          return (
+            <InputGroup key={i}>
+              <Top>
+                <Label>{i + 1}.</Label>
+                <Input
+                  value={name}
+                  onChange={e => onChange(i, 'name', e.target.value)}
+                  placeholder="Rubrik"
+                  error={validation && !validation[i].name}
+                />
+              </Top>
+              <Textarea
+                rows="3"
+                value={desc}
+                onChange={e => onChange(i, 'desc', e.target.value)}
+                placeholder="Beskrivning..."
+                error={validation && !validation[i].desc}
               />
-            </Top>
-            <Textarea
-              rows="5"
-              value={desc}
-              onChange={e => onChange(i, 'desc', e.target.value)}
-              placeholder="Beskrivning..."
-              error={validation && !validation[i].desc}
-            />
-          </InputGroup>
-        ))
+            </InputGroup>
+          )
+        })
       }
       {
         status && <StatusText status={status}>{status === 'success' ? 'Ändringarna är sparade!' : 'Någonting gick fel!'}</StatusText>

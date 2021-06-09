@@ -134,7 +134,7 @@ const Desktop = () => {
     }
 
     const interval = setInterval(() => {
-      setDisplayIdx(displayIdx === 3 ? 0 : displayIdx + 1)
+      setDisplayIdx(displayIdx === data.length - 1 ? 0 : displayIdx + 1)
     }, 7000)
 
     return () => clearInterval(interval)

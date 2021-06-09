@@ -8,15 +8,18 @@ const Wrapper = styled.section`
 
   @media (min-width: 992px) {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
   }
 `
 
 const Content = styled.div`
+  position: relative;
   max-width: 992px;
   padding: 0 10px;
+  width: 100%;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: 0 20px;
@@ -29,6 +32,44 @@ const Heading = styled.h1`
   line-height: 0.8;
   color: #ff6289;
   text-align: center;
+`
+
+const CitySwitch = styled.div`
+  margin: 0 auto 45px;
+  display: flex;
+  border: 2px solid #406f3b;
+  border-radius: 5px;
+  width: fit-content;
+
+  @media (min-width: 992px) {
+    margin: 0;
+    position: absolute;
+    right: 20px;
+  }
+`
+
+const City = styled.div`
+  padding: 10px;
+  font-weight: bold;
+  background-color: ${p => p.selected ? '#406f3b' : '#fff'};
+  color: ${p => p.selected ? '#f5f5f5' : '#999'};
+  cursor: pointer;
+
+  ${p => !p.selected && `
+    &:hover {
+      color: #406f3b;
+    }
+  `}
+
+  &:first-child {
+    border-top-left-radius: 2.5px;
+    border-bottom-left-radius: 2.5px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 2.5px;
+    border-bottom-right-radius: 2.5px;
+  }
 `
 
 const InfoText = styled.p`
@@ -49,6 +90,7 @@ const Dishes = styled.div`
 
 const Dish = styled.div`
   margin-bottom: 10px;
+  width: 100%;
 
   @media (min-width: 768px) {
     width: 50%;
@@ -75,9 +117,12 @@ const Name = styled.h4`
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
   color: #406f3b;
+  text-align: center;
 `
 
-const Desc = styled.p``
+const Desc = styled.p`
+  text-align: center;
+`
 
 const Images = styled.div`
   display: flex;
@@ -117,6 +162,7 @@ const Img = styled.img`
 
 const Lunch = () => {
   const [lunches, setLunches] = useState([])
+  const [selectedCity, setSelectedCity] = useState('Malmö')
 
   useEffect(() => {
     db.collection('lunches').get().then(querySnapshot => {
@@ -128,29 +174,39 @@ const Lunch = () => {
     <Wrapper>
       <Content>
         <Heading>Lunch</Heading>
+        <CitySwitch>
+          <City selected={selectedCity === 'Malmö'} onClick={() => setSelectedCity('Malmö')}>Malmö</City>
+          <City selected={selectedCity === 'Lund'} onClick={() => setSelectedCity('Lund')}>Lund</City>
+        </CitySwitch>
         <InfoText>
-          Dagens lunch 99:- inkl. sallad & måltidsdryck. Vardagar kl 11:30-14:30 
+          Dagens lunch 99:- inkl. sallad & måltidsdryck. Vardagar kl 11:30-14:30
         </InfoText>
         <Dishes>
-          {lunches.map(({ name, desc }, i) => (
-            <Dish key={i}>
-              <Name>{i + 1}. {name}</Name>
-              <Desc>{desc}</Desc>
-            </Dish>
-          ))}
+          {lunches.filter(({ city }) => city === selectedCity).map(({ name, desc, city }, i) => {
+            if (city !== selectedCity) {
+              return null
+            }
+
+            return (
+              <Dish key={i}>
+                <Name>{i + 1}. {name}</Name>
+                <Desc>{desc}</Desc>
+              </Dish>
+            )
+          })}
         </Dishes>
-        <Images>
-          <ImgWrapper displaySmall displayMedium>
-            <Img src="/imgs/lunch/1.jpg" alt="Ngon lunch image" />
-          </ImgWrapper>
-          <ImgWrapper displayMedium>
-            <Img src="/imgs/lunch/2.jpg" alt="Ngon lunch image" />
-          </ImgWrapper>
-          <ImgWrapper>
-            <Img src="/imgs/lunch/3.jpg" alt="Ngon lunch image" />
-          </ImgWrapper>
-        </Images>
       </Content>
+      <Images>
+        <ImgWrapper displaySmall displayMedium>
+          <Img src="/imgs/lunch/1.jpg" alt="Ngon lunch image" />
+        </ImgWrapper>
+        <ImgWrapper displayMedium>
+          <Img src="/imgs/lunch/2.jpg" alt="Ngon lunch image" />
+        </ImgWrapper>
+        <ImgWrapper>
+          <Img src="/imgs/lunch/3.jpg" alt="Ngon lunch image" />
+        </ImgWrapper>
+      </Images>
     </Wrapper>
   )
 }
