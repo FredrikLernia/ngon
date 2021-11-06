@@ -53,6 +53,10 @@
     margin-top: 0;
   }
 
+  .catering-text {
+    margin-top: 0;
+  }
+
   /* .footer-flex > div:first-child {
     margin-right: 60px;
   } */
@@ -89,6 +93,20 @@
     display: flex;
     flex-direction: row;
     padding-top: 80px
+  }
+
+  .catering-text {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #ff8c00;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+  }
+
+  .catering-text a {
+    color: #ff8c00;
+    text-decoration: none;
   }
 
   .contact .contact-info{

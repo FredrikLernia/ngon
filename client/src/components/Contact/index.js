@@ -19,6 +19,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="row container">
+        <div className="catering-text">För catering, hyra lokal och hemkörning ring <a href="tel:040170175">040-170 175</a></div>
         <div className="footer-flex-wrapper">
           <div>
             <h2 className="info-header">Här hittar du oss!</h2>
@@ -75,9 +76,9 @@ const Contact = () => {
                     <i className="fab fa-instagram social-icon"></i>
                   </a>
                 </li>
-                <li className="social-item">
+                {/* <li className="social-item">
                   <i className="fas fa-envelope social-icon"></i>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

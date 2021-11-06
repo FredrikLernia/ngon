@@ -27,7 +27,6 @@ const emptyState = [
 
 const Manage = ({ setLoading }) => {
   const [lunches, setLunches] = useState(emptyState)
-  const [city, setCity] = useState('malmo')
   const [validation, setValidation] = useState(false)
   const [status, setStatus] = useState(undefined)
   const [selectedCity, setSelectedCity] = useState('Malmö')
@@ -54,9 +53,13 @@ const Manage = ({ setLoading }) => {
     return !newValidation.some(({ name, desc }) => !name || !desc)
   }
 
-  const onChange = (idx, key, value) => {
+  const onChange = (id, key, value) => {
     const newLunches = [...lunches]
-    newLunches[idx][key] = value
+
+    const index = newLunches.findIndex(lunch => lunch.id === id)
+
+    newLunches[index][key] = value
+
     setLunches(newLunches)
 
     if (validation) {
@@ -102,14 +105,14 @@ const Manage = ({ setLoading }) => {
         </SignOutButton>
       </Top>
       {
-        lunches.filter(({ city }) => city === selectedCity).map(({ name, desc, city }, i) => {
+        lunches.filter(({ city }) => city === selectedCity).map(({ id, name, desc }, i) => {
           return (
             <InputGroup key={i}>
               <Top>
                 <Label>{i + 1}.</Label>
                 <Input
                   value={name}
-                  onChange={e => onChange(i, 'name', e.target.value)}
+                  onChange={e => onChange(id, 'name', e.target.value)}
                   placeholder="Rubrik"
                   error={validation && !validation[i].name}
                 />
@@ -117,7 +120,7 @@ const Manage = ({ setLoading }) => {
               <Textarea
                 rows="3"
                 value={desc}
-                onChange={e => onChange(i, 'desc', e.target.value)}
+                onChange={e => onChange(id, 'desc', e.target.value)}
                 placeholder="Beskrivning..."
                 error={validation && !validation[i].desc}
               />
