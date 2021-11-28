@@ -108,7 +108,7 @@ const Dish = styled.div`
     flex: 1;
 
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: ${p => p.city === 'lund' ? '10px' : '20px'};
     }
   }
 `
@@ -122,6 +122,16 @@ const Name = styled.h4`
 
 const Desc = styled.p`
   text-align: center;
+
+  & ul {
+    & li {
+      word-break: break-word;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
 `
 
 const Images = styled.div`
@@ -161,36 +171,61 @@ const Img = styled.img`
 `
 
 const Lunch = () => {
-  const [lunches, setLunches] = useState([])
-  const [selectedCity, setSelectedCity] = useState('Malmö')
+  const [city, setCity] = useState([])
+  const [selectedCity, setSelectedCity] = useState('malmo')
 
   useEffect(() => {
-    db.collection('lunches').get().then(querySnapshot => {
-      setLunches(querySnapshot.docs.map(doc => doc.data()))
+    db.collection(selectedCity).get().then(querySnapshot => {
+      setCity(querySnapshot.docs.map(doc => doc.data()))
     }).catch(error => console.error(error))
-  }, [])
+  }, [selectedCity])
+
+  const sortLund = (a, b) => {
+    if (selectedCity === 'malmo') {
+      return
+    }
+
+    return a.dayIndex - b.dayIndex
+  }
 
   return (
     <Wrapper>
       <Content>
         <Heading>Lunch</Heading>
         <CitySwitch>
-          <City selected={selectedCity === 'Malmö'} onClick={() => setSelectedCity('Malmö')}>Malmö</City>
-          <City selected={selectedCity === 'Lund'} onClick={() => setSelectedCity('Lund')}>Lund</City>
+          <City selected={selectedCity === 'malmo'} onClick={() => setSelectedCity('malmo')}>Malmö</City>
+          <City selected={selectedCity === 'lund'} onClick={() => setSelectedCity('lund')}>Lund</City>
         </CitySwitch>
         <InfoText>
-          Dagens lunch 99:- inkl. sallad & måltidsdryck. Vardagar kl 11:30-14:30
+          Dagens lunch 90:- inkl. sallad & måltidsdryck. Vardagar kl 11-14
         </InfoText>
         <Dishes>
-          {lunches.filter(({ city }) => city === selectedCity).map(({ name, desc, city }, i) => {
-            if (city !== selectedCity) {
-              return null
+          {city.sort(sortLund).map((lunch, i) => {
+            if (selectedCity === 'malmo') {
+              const { name, desc } = lunch
+
+              return (
+                <Dish key={i}>
+                  <Name>{i + 1}. {name}</Name>
+                  <Desc>{desc}</Desc>
+                </Dish>
+              )
             }
 
+            const { weekday, lunches = [] } = lunch
+
             return (
-              <Dish key={i}>
-                <Name>{i + 1}. {name}</Name>
-                <Desc>{desc}</Desc>
+              <Dish key={i} city="lund">
+                <Name>{weekday}</Name>
+                <Desc>
+                  <ul>
+                    {
+                      lunches.map((lunch, lunchIdx) => (
+                        <li key={lunchIdx}>- {lunch}</li>
+                      ))
+                    }
+                  </ul>
+                </Desc>
               </Dish>
             )
           })}
