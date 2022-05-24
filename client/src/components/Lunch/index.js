@@ -197,7 +197,7 @@ const Lunch = () => {
           <City selected={selectedCity === 'lund'} onClick={() => setSelectedCity('lund')}>Lund</City>
         </CitySwitch>
         <InfoText>
-          Dagens lunch 90:- inkl. sallad & måltidsdryck. Vardagar kl {selectedCity === 'malmo' ? '11-14:30': '11-14'}
+          Dagens lunch inkl. sallad & måltidsdryck. Vardagar kl {selectedCity === 'malmo' ? '11-14:30': '11-14'}
         </InfoText>
         <Dishes>
           {city.sort(sortLund).map((lunch, i) => {

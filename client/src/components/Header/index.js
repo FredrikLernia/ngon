@@ -45,9 +45,14 @@ const Header = ({ logoOffsetTop, setModalOpen }) => {
           <LI onClick={() => navigate('menu')}>Meny</LI>
           <LI onClick={() => navigate('contact')}>Kontakt</LI>
           <LI>
-            <BookingButton onClick={() => setModalOpen(true)}>
-              <CalendarIcon className="fas fa-calendar-alt" />Boka bord
+            <a href="https://book.easytablebooking.com/book/?id=6cee2&lang=auto" target="_blank">
+              <BookingButton>
+                <CalendarIcon className="fas fa-calendar-alt" />Boka bord
               </BookingButton>
+            </a>
+            {/* <BookingButton onClick={() => setModalOpen(true)}>
+              <CalendarIcon className="fas fa-calendar-alt" />Boka bord
+            </BookingButton> */}
           </LI>
         </UL>
         <MobileLogo src="/imgs/ngon-logo.png" alt="Ngon logo" onClick={() => navigate('start', true)} style={{ opacity: displayLogo ? 1 : 0 }} />
@@ -59,9 +64,14 @@ const Header = ({ logoOffsetTop, setModalOpen }) => {
             <MobileLI onClick={() => navigate('menu', true)}>Meny</MobileLI>
             <MobileLI onClick={() => navigate('contact', true)}>Kontakt</MobileLI>
             <MobileLI mobileButton>
-              <BookingButton onClick={() => setTimeout(() => { setModalOpen(true); setMobileMenuOpen(false) }, 300)}>
+              <a href="https://book.easytablebooking.com/book/?id=6cee2&lang=auto" target="_blank">
+                <BookingButton>
+                  <CalendarIcon className="fas fa-calendar-alt" />Boka bord
+                </BookingButton>
+              </a>
+              {/* <BookingButton onClick={() => setTimeout(() => { setModalOpen(true); setMobileMenuOpen(false) }, 300)}>
                 <CalendarIcon className="fas fa-calendar-alt" />Boka bord
-              </BookingButton>
+              </BookingButton> */}
             </MobileLI>
           </MobileUL>
         )}
